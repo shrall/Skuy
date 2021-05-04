@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
@@ -26,6 +27,8 @@ class RegisterController extends Controller
                 'message' => 'Failed to create account.'
             ]);
         } else {
+            // note harus ada event ini biar ngetrigger email verifynya
+            event(new Registered($user));
             return response([
                 'message' => 'Account created.'
             ]);
