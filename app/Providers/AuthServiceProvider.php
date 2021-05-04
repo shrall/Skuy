@@ -31,10 +31,22 @@ class AuthServiceProvider extends ServiceProvider
         if (!$this->app->routesAreCached()) {
             Passport::routes();
         }
+        // note default
+        // VerifyEmail::toMailUsing(function ($notifiable, $url) {
+        //     return (new MailMessage)
+        //         ->subject('Verify Email Address')
+        //         ->line('Click the button below to verify your email address.')
+        //         ->action('Verify Email Address', $url);
+        // });
+        // note $url itu yang nyimpen linknya buat verify
         VerifyEmail::toMailUsing(function ($notifiable, $url) {
+            // note ini cara penulisan nya
+            // return (new MailMessage)->view(
+            //     'emails.name', ['invoice' => $this->invoice]
+            // );
             return (new MailMessage)
-                ->subject('Your Subject')
-                ->markdown('emails.verification',);
+                ->subject($url)
+                ->markdown('emails.verification', ['invoice' => $url]);
         });
     }
 }

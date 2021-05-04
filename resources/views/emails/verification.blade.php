@@ -3,8 +3,8 @@
 
 The body of your messages.
 
-@component('mail::button', ['url' => ''])
-Button Text
+@component('mail::button', ['url' => $invoice])
+Verify
 @endcomponent
 
 Thanks,<br>
