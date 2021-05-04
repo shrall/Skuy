@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\EventController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,12 +18,12 @@ Route::get('/', function () {
     return view('auth.login');
 })->middleware('guest');
 
-Route::middleware(['auth', 'verified'])->group(function () {
+Route::group(['middleware' => ['auth', 'verified']], function () {
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+    Route::resource('event', EventController::class);
 });
 
 
 require __DIR__.'/auth.php';
-
