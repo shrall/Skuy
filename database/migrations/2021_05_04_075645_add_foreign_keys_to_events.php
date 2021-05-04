@@ -14,7 +14,8 @@ class AddForeignKeysToEvents extends Migration
     public function up()
     {
         Schema::table('Events', function (Blueprint $table) {
-            //
+            $table->unsignedBigInteger('user_id')->index()->after('button_color');
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 
