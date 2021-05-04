@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\Api\EventResource;
+use App\Models\Event;
 use Illuminate\Http\Request;
 
 class EventController extends Controller
@@ -36,7 +38,9 @@ class EventController extends Controller
      */
     public function show($id)
     {
-        //
+        // note disini $id jadi slug
+        $event = Event::where('custom_link', $id)->first();
+        return EventResource::make($event);
     }
 
     /**
