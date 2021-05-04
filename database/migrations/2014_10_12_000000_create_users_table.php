@@ -20,6 +20,7 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->enum('is_login', ['0','1'])->default('0');
             $table->enum('is_premium', ['0','1'])->default('0');
+            $table->timestamp('email_verified_at')->nullable();
             $table->timestamps();
         });
     }
