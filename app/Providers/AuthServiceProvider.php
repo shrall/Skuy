@@ -46,7 +46,7 @@ class AuthServiceProvider extends ServiceProvider
             // );
             return (new MailMessage)
                 ->subject($url)
-                ->markdown('emails.verification', ['invoice' => $url]);
+                ->markdown('emails.verification', ['url' => $url]);
         });
     }
 }
