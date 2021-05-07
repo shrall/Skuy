@@ -1,3 +1,39 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+
+@layer base {
+  @font-face {
+    font-family: Nexa;
+    src: url(../public/fonts/NexaBold.otf);
+  }
+  @font-face {
+    font-family: NexaL;
+    src: url(../public/fonts/NexaLight.otf);
+  }
+  @font-face {
+    font-family: SF;
+    src: url(../public/fonts/SFUITextRegular.ttf);
+  }
+}
+
+#menu .active{
+   @apply text-white bg-gradient-to-r from-primary-200 to-primary-100 py-1 px-8 rounded-lg;
+}
+
+.navItem{
+  @apply inline-block focus:outline-none;
+}
+
+.fp-slidesNav.fp-bottom {
+  @apply bottom-36 md:bottom-20 text-center;
+}
+
+.inputArea{
+  @apply rounded-lg bg-light-100 w-full focus:outline-none px-3 py-2 font-skuy-primary-sub;
+}
+
+.skuyHeader{
+  @apply font-skuy-primary text-dark-300 font-bold;
+}
+
