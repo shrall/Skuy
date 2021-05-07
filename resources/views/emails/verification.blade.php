@@ -3,7 +3,7 @@
 
 The body of your messages.
 
-@component('mail::button', ['url' => $url ?? 'https://shrall.github.io'])
+@component('mail::button', ['url' => $url ?? '#'])
 Verify
 @endcomponent
 

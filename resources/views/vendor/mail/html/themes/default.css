@@ -3,8 +3,9 @@
 body,
 body *:not(html):not(style):not(br):not(tr):not(code) {
     box-sizing: border-box;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
-        'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+        "Segoe UI Symbol";
     position: relative;
 }
 
@@ -104,7 +105,7 @@ img {
     font-weight: bold;
     text-decoration: none;
 }
-.header img{
+.header img {
     width: 200px;
 }
 
@@ -286,4 +287,35 @@ img {
 
 .break-all {
     word-break: break-all;
+}
+
+/* Custom */
+#header-logo {
+    width: 200px;
+    background-color: #fff;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    padding: 1rem;
+    border-radius: 0.75rem/* 12px */;
+}
+
+#email-body {
+    background-color: #fff;
+    border-radius: 0.75rem/* 12px */;
+}
+
+#email-button {
+    color: #fff;
+    text-align: center;
+    padding-top: 0.5rem/* 8px */;
+    padding-bottom: 0.5rem/* 8px */;
+    padding-left: 2rem/* 32px */;
+    padding-right: 2rem/* 32px */;
+    border-radius: 0.5rem/* 8px */;
+    width: 9rem/* 144px */;
+    font-weight: 500;
+    font-size: 1.25rem/* 20px */;
+    line-height: 1.75rem/* 28px */;
+    z-index: 10;
+    background-color: #FD7603;
+    text-decoration: none;
 }
