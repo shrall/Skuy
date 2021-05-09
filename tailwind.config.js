@@ -59,7 +59,6 @@ module.exports = {
                 "9/10": "90%",
             },
             fontFamily: {
-                sans: ["Nunito", ...defaultTheme.fontFamily.sans],
                 "skuy-primary": ['"Nexa"'],
                 "skuy-primary-sub": ['"NexaL"'],
                 "skuy-secondary": ['"SF"'],
