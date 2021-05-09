@@ -12,7 +12,7 @@ body *:not(html):not(style):not(br):not(tr):not(code) {
 body {
     -webkit-text-size-adjust: none;
     background-color: #ffffff;
-    color: #718096;
+    color: #032d3f;
     height: 100%;
     line-height: 1.4;
     margin: 0;
@@ -266,12 +266,12 @@ img {
 
 .panel-content {
     background-color: #11847d;
-    color: #718096;
+    color: #032d3f;
     padding: 16px;
 }
 
 .panel-content p {
-    color: #718096;
+    color: #032d3f;
 }
 
 .panel-item {
@@ -318,4 +318,15 @@ img {
     z-index: 10;
     background-color: #FD7603;
     text-decoration: none;
+}
+
+.contactIcon{
+    width: 40px;
+    display: inline-block;
+    margin: 0.5rem 0.5rem 0.25rem 0.5rem;
+}
+.contactIcons{
+    width: 45px;
+    display: inline-block;
+    margin: 0.5rem 0.5rem 0.25rem 0.5rem;
 }

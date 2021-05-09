@@ -45,7 +45,7 @@ class AuthServiceProvider extends ServiceProvider
             //     'emails.name', ['invoice' => $this->invoice]
             // );
             return (new MailMessage)
-                ->subject('Selamat datang ke Skuy!')
+                ->subject('Skuy - Verifikasi E-Mail')
                 ->markdown('emails.verification', ['url' => $url, 'name' => $notifiable->name, 'email' => $notifiable->email]);
         });
     }
