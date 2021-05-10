@@ -28,14 +28,10 @@
                             All Events
                         </h1>
                     </div>
-                    <div class="">
-                        <form action="">
-                            <button
-                                class="bg-gradient-to-r from-primary-500 to-primary2-500 border-0 rounded-lg p-2 px-6 text-white text-lg font-skuy-secondary">
-                                See All
-                            </button>
-                        </form>
-                    </div>
+                    <a href="{{ route('event.index') }}"
+                        class="bg-gradient-to-r no-underline from-primary-500 to-primary2-500 border-0 rounded-lg p-2 px-6 text-white text-lg font-skuy-secondary">
+                        See All
+                    </a>
                 </div>
             </div>
             <div class="mb-4 p-4 bg-white shadow-xl">

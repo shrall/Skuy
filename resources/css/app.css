@@ -59,7 +59,7 @@
 }
 
 .nav__link {
-    @apply flex items-center gap-x-4 pt-2 pr-0 pb-2 pl-6 relative text-gray-100 mb-6 transition-width duration-500 ease-out hover:text-other;
+    @apply flex items-center gap-x-4 pt-2 pr-0 pb-2 pl-4 relative text-gray-100 mb-6 transition-width duration-500 ease-out hover:text-other no-underline;
 }
 
 .show {
