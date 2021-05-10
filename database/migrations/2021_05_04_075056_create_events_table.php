@@ -28,7 +28,7 @@ class CreateEventsTable extends Migration
             $table->string('title_color');
             $table->string('desc_color');
             $table->string('date_color');
-            $table->string('button_color');
+            $table->string('contacts_color');
             $table->enum('register', ['0', '1'])
                 ->default('0')
                 ->comment('0 = Off, 1 = On');
