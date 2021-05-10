@@ -50,7 +50,7 @@
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
                                 <td>{{ $event->title }}</td>
-                                <td>{{ $event->custom_link }}</td>
+                                <td>{{ $event->slug }}</td>
                                 <td>{{ $event->date }}</td>
                                 <td>0</td>
                             </tr>

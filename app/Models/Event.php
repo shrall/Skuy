@@ -12,14 +12,17 @@ class Event extends Model
     use Sluggable;
 
     protected $fillable = [
-        'name', 'custom_link',
+        'title', 'custom_link',
         'description',
         'logo', 'banner', 'template', 'date',
         'email', 'instagram', 'whatsapp',
-        'title_color', 'desc_color', 'date_color', 'button_color',
+        'title_color', 'desc_color', 'date_color', 'contacts_color',
+        'register', 'register_text', 'register_button_color', 'register_text_color',
+        'user_id'
     ];
 
-    public function user() {
+    public function user()
+    {
         return $this->belongsTo(User::class, 'user_id', 'id');
     }
     public function sluggable(): array
@@ -32,6 +35,6 @@ class Event extends Model
     }
     public function getRouteKeyName(): string
     {
-        return 'custom_link';
+        return 'slug';
     }
 }

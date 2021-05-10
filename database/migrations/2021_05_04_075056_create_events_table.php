@@ -25,7 +25,7 @@ class CreateEventsTable extends Migration
             $table->string('email')->nullable();
             $table->string('instagram')->nullable();
             $table->string('whatsapp')->nullable();
-            $table->date('date');
+            $table->string('date');
             $table->string('title_color');
             $table->string('desc_color');
             $table->string('date_color');
