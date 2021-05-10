@@ -9,6 +9,9 @@ module.exports = {
 
     theme: {
         extend: {
+            backgroundImage: theme => ({
+              'loginbg': "url('/img/bglogin.svg')"
+            }),
             colors: {
                 primary: {
                     50: "#ffb931",
@@ -16,11 +19,19 @@ module.exports = {
                     200: "#FD7603",
                     250: "#f28123",
                     300: "#B55D15",
+                    400: '#FDA93F',
+                    500: '#FC8100',
+                    600: '#D86400'
+                },
+                primary2: {
+                  500: '#FF9900',
+                  600: '#DB7A00'
                 },
                 secondary: {
                     100: "#9FD2C6",
                     200: "#30948E",
                     300: "#11847D",
+                    400: '#006666',
                 },
                 light: {
                     50: "#f5f6f5",
@@ -33,6 +44,10 @@ module.exports = {
                     200: "#08545f",
                     300: "#032d3f",
                 },
+                other: '#FFCC33',
+            },
+            transitionProperty: {
+              'width': 'width'
             },
             height: {
                 "vh-50": "50vh",

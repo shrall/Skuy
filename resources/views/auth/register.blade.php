@@ -1,59 +1,79 @@
-<x-guest-layout>
-    <x-auth-card>
-        <x-slot name="logo">
-            <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-            </a>
-        </x-slot>
+@extends('layouts.auth')
 
-        <!-- Validation Errors -->
-        <x-auth-validation-errors class="mb-4" :errors="$errors" />
+@section('title')
+    <title>Skuy - Daftar</title>
+@endsection
 
-        <form method="POST" action="{{ route('register') }}">
+@section('content')
+
+    <div class="w-4/12 bg-white shadow-md px-12 pt-8 pb-14 font-skuy-secondary">
+        <h2 class="text-secondary-300 text-2xl font-bold font-skuy-primary mb-10">Daftar Akun</h2>
+        <form method="POST" action="{{ route('register') }}" class="text-gray-500 h-5/6">
             @csrf
+            <div class="flex flex-col justify-between h-full">
+                <div class="flex-1">
+                    <div>
+                        <label for="">Nama Lengkap</label>
+                        <span class="text-primary-500">*</span><br>
+                        <input id="name" type="text" type="text" name="name" :value="old('name')" required autofocus
+                            class="inputText w-full">
+                    </div>
 
-            <!-- Name -->
-            <div>
-                <x-label for="name" :value="__('Name')" />
+                    <div class="mt-2">
+                        <label for="">Email</label>
+                        <span class="text-primary-500">*</span><br>
+                        <input id="email" type="email" name="email" :value="old('email')" required class="inputText w-full">
+                    </div>
 
-                <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus />
-            </div>
+                    <div class="mt-2">
+                        <label for="">Kata Sandi</label>
+                        <span class="text-primary-500">*</span><br>
+                        <div class="flex justify-between items-center">
+                            <input type="password" name="password" id="password" class="inputText passwordInput w-full"
+                                required autocomplete="new-password">
+                            {{-- <i class='bx bxs-show cursor-pointer ml-2' id="togglePassword"></i> --}}
+                        </div>
+                    </div>
+                    <div class="mt-2">
+                        <label for="">Konfirmasi Sandi</label>
+                        <span class="text-primary-500">*</span><br>
+                        <div class="flex justify-between items-center">
+                            <input type="password" name="password_confirmation" id="password_confirmation"
+                                class="inputText passwordInput w-full" required>
+                            {{-- <i class='bx bxs-show cursor-pointer ml-2' id="togglePassword"></i> --}}
+                        </div>
+                    </div>
+                </div>
 
-            <!-- Email Address -->
-            <div class="mt-4">
-                <x-label for="email" :value="__('Email')" />
+                <div class="flex-1">
+                    @if ($errors->any())
+                        <div class="mb-4">
+                            <ul class="text-primary-500">
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
 
-                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
-            </div>
+                    <div class="mt-8">
+                        <div>
+                            <button type="submit"
+                                class="bg-gradient-to-r from-primary-500 to-primary2-500 w-full border-0 rounded-lg p-2 text-white font-bold text-lg font-skuy-primary">
+                                Gabung Sekarang
+                            </button>
+                        </div>
 
-            <!-- Password -->
-            <div class="mt-4">
-                <x-label for="password" :value="__('Password')" />
-
-                <x-input id="password" class="block mt-1 w-full"
-                                type="password"
-                                name="password"
-                                required autocomplete="new-password" />
-            </div>
-
-            <!-- Confirm Password -->
-            <div class="mt-4">
-                <x-label for="password_confirmation" :value="__('Confirm Password')" />
-
-                <x-input id="password_confirmation" class="block mt-1 w-full"
-                                type="password"
-                                name="password_confirmation" required />
-            </div>
-
-            <div class="flex items-center justify-end mt-4">
-                <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
-                    {{ __('Already registered?') }}
-                </a>
-
-                <x-button class="ml-4">
-                    {{ __('Register') }}
-                </x-button>
+                        <div class="flex justify-center mt-8">
+                            <div class="">
+                                <p class="float-left text-secondary-300">Sudah memiliki akun? &nbsp;</p>
+                                <a href="{{ route('login') }}" class="text-primary-500 hover:text-primary-600">Login
+                                    di sini</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </form>
-    </x-auth-card>
-</x-guest-layout>
+    </div>
+@endsection

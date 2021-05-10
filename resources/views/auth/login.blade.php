@@ -1,56 +1,68 @@
-<x-guest-layout>
-    <x-auth-card>
-        <x-slot name="logo">
-            <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-            </a>
-        </x-slot>
+@extends('layouts.auth')
 
-        <!-- Session Status -->
-        <x-auth-session-status class="mb-4" :status="session('status')" />
+@section('title')
+    <title>Skuy - Masuk</title>
+@endsection
 
-        <!-- Validation Errors -->
-        <x-auth-validation-errors class="mb-4" :errors="$errors" />
+@section('content')
 
-        <form method="POST" action="{{ route('login') }}">
-            @csrf
+    <div class="w-4/12 bg-white shadow-md px-12 pt-8 pb-14 font-skuy-secondary">
+        <h2 class="text-secondary-300 text-2xl font-bold font-skuy-primary mb-10">Login Akun</h2>
+        <form action="navbar.html" class="text-gray-500 h-5/6">
+            <div class="flex flex-col justify-between h-full">
+                <div class="flex-1">
+                    <div class="mt-2">
+                        <label for="">Email</label>
+                        <span class="text-primary-500">*</span><br>
+                        <input type="text" name="namaDepan" class="inputText w-full">
+                    </div>
 
-            <!-- Email Address -->
-            <div>
-                <x-label for="email" :value="__('Email')" />
+                    <div class="mt-2">
+                        <label for="">Kata Sandi</label>
+                        <span class="text-primary-500">*</span><br>
+                        <div class="flex justify-between">
+                            <input type="password" name="password" id="password" class="inputText w-full">
+                            <i class='bx bxs-show cursor-pointer' id="togglePassword"></i>
+                        </div>
+                    </div>
+                </div>
 
-                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />
-            </div>
+                <div class="flex-1">
+                    <div class="mb-4">
+                        <ul class="text-primary-500">
+                            <li>*Kata sandi kurang kuat</li>
+                        </ul>
+                    </div>
 
-            <!-- Password -->
-            <div class="mt-4">
-                <x-label for="password" :value="__('Password')" />
+                    <div class="mt-8">
+                        <div>
+                            <button type="submit"
+                                class="bg-gradient-to-r from-primary-500 to-primary2-500 w-full border-0 rounded-lg p-2 text-white font-bold text-lg font-skuy-primary">
+                                Login
+                            </button>
+                        </div>
 
-                <x-input id="password" class="block mt-1 w-full"
-                                type="password"
-                                name="password"
-                                required autocomplete="current-password" />
-            </div>
+                        {{-- <div class="mt-3 relative">
+                            <form method="get" action="">
+                                <button type="submit"
+                                    class="text-primary-500 hover:text-primary-600 border-primary-500 hover:border-primary-600 w-full rounded-lg p-2 border-2 font-bold text-lg font-skuy-primary">
+                                    <img src="img/googleIcon.svg" alt="" class="w-5 absolute left-16 top-3">
+                                    Buat akun dengan google
+                                </button>
+                            </form>
+                        </div> --}}
 
-            <!-- Remember Me -->
-            <div class="block mt-4">
-                <label for="remember_me" class="inline-flex items-center">
-                    <input id="remember_me" type="checkbox" class="rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" name="remember">
-                    <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
-                </label>
-            </div>
-
-            <div class="flex items-center justify-end mt-4">
-                @if (Route::has('password.request'))
-                    <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}">
-                        {{ __('Forgot your password?') }}
-                    </a>
-                @endif
-
-                <x-button class="ml-3">
-                    {{ __('Log in') }}
-                </x-button>
+                        <div class="flex justify-center mt-8">
+                            <div class="">
+                                <p class="float-left text-secondary-300">Belum memiliki akun? &nbsp;</p>
+                                <a href="{{ route('register') }}" class="text-primary-500 hover:text-primary-600">Daftar
+                                    di
+                                    sini</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </form>
-    </x-auth-card>
-</x-guest-layout>
+    </div>
+@endsection
