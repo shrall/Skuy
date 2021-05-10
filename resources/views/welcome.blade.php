@@ -36,6 +36,7 @@
                 <li data-menuanchor="teamPage" class="navItem"><a href="#teamPage">Our Team</a></li>
                 <li data-menuanchor="reviewPage" class="navItem"><a href="#reviewPage">Reviews</a></li>
                 <li data-menuanchor="contactPage" class="navItem"><a href="#contactPage">Contact Us</a></li>
+                <li class="navItem text-white bg-gradient-to-r from-secondary-400 to-secondary-200 py-1 px-8 rounded-lg"><a href="{{route('login')}}">Login</a></li>
             </div>
         </ul>
         <ul id="menu" class="text-right mr-0 md:mr-8 flex flex-col space-y-12 md:hidden">
@@ -74,7 +75,7 @@
                             class="text-2xl md:text-3xl font-black font-skuy-primary-sub text-secondary-300 text-left  mb-12 md:mb-4">
                             Bikin event hebatmu jadi lebih menarik.
                         </span>
-                        <a href="#contactPage"
+                        <a href="{{route('register')}}"
                             class="text-white text-center bg-gradient-to-r from-primary-200 via-primary-100 to-primary-200 py-2 px-2 mb-24 rounded-lg w-72 font-medium text-2xl md:text-3xl cursor-pointer z-10 animate-gradient-xy font-skuy-primary">
                             Gabung Sekarang
                         </a>
