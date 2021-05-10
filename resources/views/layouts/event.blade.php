@@ -63,7 +63,7 @@
                                 @endif
                             </div>
                             @if ($event->register == '1')
-                                <div style="{'background-color': {{ $event->register_button_color }}, color:{{ $event->register_text_color }}}"
+                                <div style="background-color: {{ $event->register_button_color }}; color:{{ $event->register_text_color }}"
                                     class="text-white text-center py-2 px-2 rounded-lg w-40 font-medium text-xl bg-secondary-100 cursor-pointer break-words">
                                     {{ $event->register_text }}</div>
                             @endif

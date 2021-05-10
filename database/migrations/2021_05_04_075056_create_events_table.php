@@ -17,6 +17,7 @@ class CreateEventsTable extends Migration
             $table->id();
             $table->string('title');
             $table->string('custom_link');
+            $table->string('slug')->nullable();
             $table->text('description');
             $table->string('logo')->nullable();
             $table->string('banner')->nullable();
