@@ -11,20 +11,18 @@
         <form method="POST" action="{{ route('register') }}" class="text-gray-500 h-5/6">
             @csrf
             <div class="flex flex-col justify-between h-full">
-                <div class="flex-1">
+                <div class="flex-1 mb-2">
                     <div>
                         <label for="">Nama Lengkap</label>
                         <span class="text-primary-500">*</span><br>
                         <input id="name" type="text" type="text" name="name" :value="old('name')" required autofocus
                             class="inputText w-full">
                     </div>
-
                     <div class="mt-2">
                         <label for="">Email</label>
                         <span class="text-primary-500">*</span><br>
                         <input id="email" type="email" name="email" :value="old('email')" required class="inputText w-full">
                     </div>
-
                     <div class="mt-2">
                         <label for="">Kata Sandi</label>
                         <span class="text-primary-500">*</span><br>
@@ -44,7 +42,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="flex-1">
                     @if ($errors->any())
                         <div class="mb-4">
@@ -55,7 +52,6 @@
                             </ul>
                         </div>
                     @endif
-
                     <div class="mt-8">
                         <div>
                             <button type="submit"
@@ -63,7 +59,6 @@
                                 Gabung Sekarang
                             </button>
                         </div>
-
                         <div class="flex justify-center mt-8">
                             <div class="">
                                 <p class="float-left text-secondary-300">Sudah memiliki akun? &nbsp;</p>
