@@ -30,6 +30,7 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
         return view('dashboard');
     })->name('dashboard');
     // Route::resource('event', EventController::class);
+    Route::get('event', [EventController::class, 'index'])->name('event.index');
 });
 
 

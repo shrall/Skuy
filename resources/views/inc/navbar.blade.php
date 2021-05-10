@@ -31,14 +31,14 @@
                     <span class="">Dashboard</span>
                 </a>
 
-                <a href="event.html" class="nav__link">
+                <a href="{{route('event.index')}}" class="nav__link">
                     <i class="bx bx-calendar-event text-xl"></i>
                     <span class="">Events</span>
                 </a>
             </div>
         </div>
 
-        <a href="login.html" class="nav__link">
+        <a href="{{route('logout')}}" class="nav__link">
             <i class='bx bx-log-out text-xl'></i>
             <span class="">Log Out</span>
         </a>

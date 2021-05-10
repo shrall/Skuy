@@ -26,6 +26,11 @@
         rel="stylesheet">
     <link type="text/css" href="https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap5.min.css" rel="stylesheet">
 
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" />
+
 </head>
 <body>
     <div id="body-pd" class="font-skuy-secondary relative h-12 pt-20 pr-4 pl-24 transition-width duration-500">
@@ -36,5 +41,13 @@
 
     <!-- SCRIPT -->
     <script src="{{asset('js/app.js')}}"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap5.js"></script>
+    <script>
+        $(document).ready(function() {
+            var thetable = $('.table').DataTable();
+        });
+    </script>
 </body>
 </html>
