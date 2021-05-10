@@ -44,3 +44,32 @@
 .inputText {
     @apply border-b-2 border-gray-500 focus:border-secondary-300 pb-1 focus:text-secondary-300 focus:outline-none;
 }
+
+
+.body-pd {
+    @apply transition-width duration-500 pl-20 md:pl-64 !important;
+}
+
+.navActive {
+    @apply text-white;
+}
+
+.navActive::before {
+    @apply text-other absolute left-0 w-1 h-8 bg-other;
+}
+
+.nav__link {
+    @apply flex items-center gap-x-4 pt-2 pr-0 pb-2 pl-6 relative text-gray-100 mb-6 transition-width duration-500 ease-out hover:text-other;
+}
+
+.show {
+    @apply left-0 md:w-52;
+}
+
+/* DROPDOWN */
+.dropdown-content{
+    @apply hidden absolute left-10 bg-white p-3 border-0 rounded-lg w-40 overflow-auto shadow-md z-10
+}
+.dropBlock{
+    @apply block;
+}

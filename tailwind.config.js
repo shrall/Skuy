@@ -9,8 +9,8 @@ module.exports = {
 
     theme: {
         extend: {
-            backgroundImage: theme => ({
-              'loginbg': "url('/img/bglogin.svg')"
+            backgroundImage: (theme) => ({
+                loginbg: "url('/img/bglogin.svg')",
             }),
             colors: {
                 primary: {
@@ -19,19 +19,19 @@ module.exports = {
                     200: "#FD7603",
                     250: "#f28123",
                     300: "#B55D15",
-                    400: '#FDA93F',
-                    500: '#FC8100',
-                    600: '#D86400'
+                    400: "#FDA93F",
+                    500: "#FC8100",
+                    600: "#D86400",
                 },
                 primary2: {
-                  500: '#FF9900',
-                  600: '#DB7A00'
+                    500: "#FF9900",
+                    600: "#DB7A00",
                 },
                 secondary: {
                     100: "#9FD2C6",
                     200: "#30948E",
                     300: "#11847D",
-                    400: '#006666',
+                    400: "#006666",
                 },
                 light: {
                     50: "#f5f6f5",
@@ -44,10 +44,12 @@ module.exports = {
                     200: "#08545f",
                     300: "#032d3f",
                 },
-                other: '#FFCC33',
+                success: "#2F9E83",
+                danger: "#FF6633",
+                other: "#FFCC33",
             },
             transitionProperty: {
-              'width': 'width'
+                width: "width",
             },
             height: {
                 "vh-50": "50vh",
