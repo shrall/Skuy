@@ -81,4 +81,14 @@ class EventController extends Controller
     {
         //
     }
+
+    public function register_edit(Event $event)
+    {
+        //
+    }
+
+    public function register_update(Request $request, Event $event)
+    {
+        //
+    }
 }

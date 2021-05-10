@@ -19,15 +19,18 @@ Route::get('/', function () {
     return view('welcome');
 })->middleware('guest');
 
-Route::get('/verify', function(){
+Route::get('/verify', function () {
     return new VerificationMail();
 });
+Route::get('event/{event}', [EventController::class, 'show'])->name('event.show');
+Route::match(['get', 'head'], 'event/{event}/register', [EventController::class, 'register_edit'])->name('event.register_edit');
+Route::match(['put', 'patch'], 'event/{event}/register', [EventController::class, 'register_update'])->name('event.register_update');
 Route::group(['middleware' => ['auth', 'verified']], function () {
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
-    Route::resource('event', EventController::class);
+    // Route::resource('event', EventController::class);
 });
 
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
