@@ -5,7 +5,6 @@
 @endsection
 
 @section('content')
-
     <div class="w-4/12 bg-white shadow-md px-12 pt-8 pb-14 font-skuy-secondary">
         <h2 class="text-secondary-300 text-2xl font-bold font-skuy-primary mb-10">Daftar Akun</h2>
         <form method="POST" action="{{ route('register') }}" class="text-gray-500 h-5/6">

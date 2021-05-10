@@ -25,17 +25,23 @@
 
 <body>
     <div class="bg-loginbg p-16 w-full h-screen bg-center bg-cover box-border">
-        <div class="flex justify-items-center p-16 bg-white border-white rounded-lg shadow-2xl">
-            <div class="flex justify-between w-full">
-                <div class="m-20 ml-28">
-                    <img src="{{ asset('img/skuylogo.png') }}" alt="" srcset="" class="w-36">
-                    <p class="text-secondary-300 font-bold text-xl mb-16 mt-10 font-skuy-secondary">Website Builder
-                        terpercaya untuk para Event <br>
-                        Organizer yang ingin menyelenggarakan acara virtual.</p>
-                    <img src="{{ asset('img/laptop.png') }}" alt="" srcset="" class="max-w-2xl">
+        <div
+            class="flex @auth flex-col items-center place-content-center @endauth @guest justify-items-center @endguest p-8 bg-white border-white rounded-lg shadow-2xl h-vh-90">
+            @guest
+                <div class="flex justify-between w-full">
+                    <div class="m-20 ml-28">
+                        <img src="{{ asset('img/skuylogo.png') }}" alt="" srcset="" class="w-36">
+                        <p class="text-secondary-300 font-bold text-xl mb-16 mt-10 font-skuy-secondary">Website Builder
+                            terpercaya untuk para Event <br>
+                            Organizer yang ingin menyelenggarakan acara virtual.</p>
+                        <img src="{{ asset('img/laptop.png') }}" alt="" srcset="" class="max-w-2xl">
+                    </div>
+                    @yield('content')
                 </div>
+            @endguest
+            @auth
                 @yield('content')
-            </div>
+            @endauth
         </div>
     </div>
 
