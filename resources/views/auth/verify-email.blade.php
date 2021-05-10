@@ -8,10 +8,7 @@
     <div class="w-7/12 text-center flex flex-col items-center">
         <div class="font-skuy-primary text-dark-300 text-4xl mb-2">Terima kasih sudah mendaftar di Skuy!</div>
         <div class="w-11/12">
-            <div class="font-skuy-primary text-dark-300 text-2xl">Kurang satu langkah lagi untuk menjadi bagian dari kita
-                dan
-                kamu
-                akan langsung bisa membuat event yang kamu mau!</div>
+            <img src="{{asset('img/illust-verify-email.png')}}" alt="" srcset="">
             <div class="font-skuy-primary text-dark-300 text-2xl">Cek email yang baru saja kamu daftarkan untuk
                 menyelesaikan
                 proses verifikasi.</div>
