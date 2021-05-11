@@ -62,18 +62,24 @@
                                         </button>
                                         <div id="myDropdown{{ $loop->iteration }}" class="dropdown-content">
                                             <div>
-                                                <a href="detailevent.html" class="no-underline text-dark-300">
-                                                    <i class='bx bxs-show cursor-pointer'></i>
-                                                    View {{ $loop->iteration }} <br>
-                                                </a>
-                                                <a href="#about" class="no-underline text-dark-300">
+                                                {{-- <form action="{{ route('event.detail', $event->slug) }}" method="get">
+                                                    <button type="submit" class="no-underline text-dark-300">
+                                                        <i class='bx bxs-show cursor-pointer'></i>
+                                                        View Details <br>
+                                                    </button>
+                                                </form> --}}
+                                                {{-- <a href="#about" class="no-underline text-dark-300">
                                                     <i class='bx bxs-edit'></i>
                                                     Edit Event <br>
-                                                </a>
-                                                <a href="#contact" class="text-danger no-underline">
-                                                    <i class='bx bx-trash'></i>
-                                                    Delete Event
-                                                </a>
+                                                </a> --}}
+                                                <form action="{{ route('event.destroy', $event->slug) }}" method="POST">
+                                                    @csrf
+                                                    <input name="_method" type="hidden" value="DELETE">
+                                                    <button type="submit" class="text-danger no-underline">
+                                                        <i class='bx bx-trash'></i>
+                                                        Delete Event
+                                                    </button>
+                                                </form>
                                             </div>
                                         </div>
                                     </div>
