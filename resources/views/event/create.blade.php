@@ -132,8 +132,8 @@
                             <div id="event-date" class="mb-4"></div>
                             <div class="skuyHeader text-2xl mb-2">Description</div>
                             <textarea name="description" v-model="eventDesc" class="inputArea mb-4 resize-none"
-                                placeholder="Your Event Description, max 250 characters." rows="5"
-                                maxlength="250" required></textarea>
+                                placeholder="Your Event Description, max 250 characters." rows="5" maxlength="250"
+                                required></textarea>
                             <div class="skuyHeader text-2xl mb-2">Contact</div>
                             <div class="flex flex-row items-center mb-2">
                                 <span class="fa fa-fw fa-envelope text-dark-300 text-3xl mr-2"></span>
@@ -142,13 +142,13 @@
                             </div>
                             <div class="flex flex-row items-center mb-2">
                                 <span class="fab fa-fw fa-instagram text-dark-300 text-3xl mr-2"></span>
-                                <input name="instagram" id="inputInstagram" @keyup="changeInstagram" type="text" class="inputArea"
-                                    placeholder="Instagram Username">
+                                <input name="instagram" id="inputInstagram" @keyup="changeInstagram" type="text"
+                                    class="inputArea" placeholder="Instagram Username">
                             </div>
                             <div class="flex flex-row items-center mb-4">
                                 <span class="fab fa-fw fa-whatsapp text-dark-300 text-3xl mr-2"></span>
-                                <input name="whatsapp" id="inputWhatsapp" @keyup="changeWhatsapp" type="text" class="inputArea"
-                                    placeholder="WhatsApp (e.g +62 812 3312 9966)">
+                                <input name="whatsapp" id="inputWhatsapp" @keyup="changeWhatsapp" type="text"
+                                    class="inputArea" placeholder="WhatsApp (e.g +62 812 3312 9966)">
                             </div>
                             <div class="flex justify-between items-center mb-2">
                                 <h2 class="skuyHeader text-3xl">Registration</h2>
@@ -163,10 +163,14 @@
                                 <div class="skuyHeader text-2xl mb-2">Button Text</div>
                                 <input name="register_text" v-model="registerText" type="text" class="inputArea mb-4"
                                     placeholder="Max 20 Characters." maxlength="20">
+                                <div class="skuyHeader text-2xl mb-2">Google Form Link</div>
+                                <input name="register_link" v-model="registerLink" type="text" class="inputArea mb-4" :required="registerBool">
                                 <div class="skuyHeader text-2xl mb-2">Button Color</div>
-                                <input name="register_button_color" v-model="registerButtonColor" data-jscolor="{}" class="inputArea mb-2">
+                                <input name="register_button_color" v-model="registerButtonColor" data-jscolor="{}"
+                                    class="inputArea mb-2">
                                 <div class="skuyHeader text-2xl mb-2">Text Color</div>
-                                <input name="register_text_color" v-model="registerTextColor" data-jscolor="{}" class="inputArea mb-2">
+                                <input name="register_text_color" v-model="registerTextColor" data-jscolor="{}"
+                                    class="inputArea mb-2">
                             </div>
                             <div class="skuyHeader text-3xl my-4">Settings</div>
                             <div class="skuyHeader text-2xl mb-2">Custom Link</div>
@@ -179,7 +183,8 @@
                             <div class="skuyHeader text-2xl mb-2">Date Color</div>
                             <input name="date_color" v-model="dateColor" data-jscolor="{}" class="inputArea mb-2">
                             <div class="skuyHeader text-2xl mb-2">Contacts Color</div>
-                            <input name="contacts_color" v-model="contactsColor" data-jscolor="{}" class="inputArea mb-2">
+                            <input name="contacts_color" v-model="contactsColor" data-jscolor="{}"
+                                class="inputArea mb-2">
                         </div>
                         <div
                             class="w-full h-16 bg-secondary-300 flex flex-row items-center text-white font-skuy-primary-sub justify-between px-6">

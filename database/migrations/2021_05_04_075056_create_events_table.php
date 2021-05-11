@@ -34,6 +34,7 @@ class CreateEventsTable extends Migration
                 ->default('0')
                 ->comment('0 = Off, 1 = On');
             $table->string('register_text')->nullable();
+            $table->string('register_link')->nullable();
             $table->string('register_button_color')->nullable();
             $table->string('register_text_color')->nullable();
             $table->timestamps();

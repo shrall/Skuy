@@ -63,21 +63,24 @@
                                 @endif
                             </div>
                             @if ($event->register == '1')
-                                <div style="background-color: {{ $event->register_button_color }}; color:{{ $event->register_text_color }}"
-                                    class="text-white text-center py-2 px-2 rounded-lg w-40 font-medium text-xl bg-secondary-100 cursor-pointer break-words">
-                                    {{ $event->register_text }}</div>
+                                <a href="{{ $event->register_link }}"
+                                    style="background-color: {{ $event->register_button_color }}; color:{{ $event->register_text_color }}"
+                                    class="text-white text-center py-2 px-2 rounded-lg w-40 font-medium text-xl bg-secondary-100 cursor-pointer break-words no-underline">
+                                    {{ $event->register_text }}</a>
                             @endif
 
                         </div>
                         @if ($event->banner != null)
                             <div class="col-span-5 flex flex-col justify-center px-2 mr-12 overflow-hidden">
-                                <img src="{{ asset('events/banner/' . $event->banner) }}" class="templateBanner w-full">
+                                <img src="{{ asset('events/banner/' . $event->banner) }}"
+                                    class="templateBanner w-full">
                             </div>
                         @endif
                         @if ($event->logo != null)
                             <div v-show="logoBool"
                                 class="rounded-lg bg-white absolute top-12 right-36 w-24 p-1 shadow-2xl">
-                                <img src="{{ asset('events/logo/' . $event->logo) }}" class="templateLogo rounded-lg">
+                                <img src="{{ asset('events/logo/' . $event->logo) }}"
+                                    class="templateLogo rounded-lg">
                             </div>
                         @endif
                     </div>
@@ -116,15 +119,17 @@
                                 @endif
                             </div>
                             @if ($event->register == '1')
-                                <div style="background-color: {{ $event->register_button_color }}; color:{{ $event->register_text_color }}"
-                                    class="text-white text-center py-2 px-2 rounded-lg w-40 font-medium text-xl bg-secondary-100 cursor-pointer break-words">
-                                    {{ $event->register_text }}</div>
+                                <a href="{{ $event->register_link }}"
+                                    style="background-color: {{ $event->register_button_color }}; color:{{ $event->register_text_color }}"
+                                    class="text-white text-center py-2 px-2 rounded-lg w-40 font-medium text-xl bg-secondary-100 cursor-pointer break-words no-underline">
+                                    {{ $event->register_text }}</a>
                             @endif
                         </div>
                         @if ($event->banner != null)
                             <div
                                 class="col-span-12 flex flex-col justify-center bg-light-50 rounded-xl h-full overflow-hidden relative">
-                                <img src="{{ asset('events/banner/' . $event->banner) }}" class="templateBanner w-full rounded-xl">
+                                <img src="{{ asset('events/banner/' . $event->banner) }}"
+                                    class="templateBanner w-full rounded-xl">
                                 <div class="bg-black rounded-xl h-full w-full absolute opacity-20 z-10">
                                 </div>
                             </div>
@@ -132,7 +137,8 @@
                         @if ($event->logo != null)
                             <div v-show="logoBool"
                                 class="rounded-lg bg-white absolute top-12 right-36 w-24 p-1 shadow-2xl z-30">
-                                <img src="{{ asset('events/logo/' . $event->logo) }}" class="templateLogo rounded-lg">
+                                <img src="{{ asset('events/logo/' . $event->logo) }}"
+                                    class="templateLogo rounded-lg">
                             </div>
                         @endif
                     </div>
@@ -172,21 +178,24 @@
                                 @endif
                             </div>
                             @if ($event->register == '1')
-                                <div style="background-color: {{ $event->register_button_color }}; color:{{ $event->register_text_color }}"
-                                    class="text-white text-center py-2 px-2 rounded-lg w-40 font-medium text-xl bg-secondary-100 cursor-pointer break-words">
-                                    {{ $event->register_text }}</div>
+                                <a href="{{ $event->register_link }}"
+                                    style="background-color: {{ $event->register_button_color }}; color:{{ $event->register_text_color }}"
+                                    class="text-white text-center py-2 px-2 rounded-lg w-40 font-medium text-xl bg-secondary-100 cursor-pointer break-words no-underline">
+                                    {{ $event->register_text }}</a>
                             @endif
 
                         </div>
                         @if ($event->banner != null)
                             <div class="flex flex-col justify-center px-2 overflow-hidden h-full">
-                                <img src="{{ asset('events/banner/' . $event->banner) }}" class="templateBanner my-auto">
+                                <img src="{{ asset('events/banner/' . $event->banner) }}"
+                                    class="templateBanner my-auto">
                             </div>
                         @endif
                         @if ($event->logo != null)
                             <div v-show="logoBool"
                                 class="rounded-lg bg-white absolute top-12 left-52 right-0 w-24 p-1 shadow-2xl mx-auto">
-                                <img src="{{ asset('events/logo/' . $event->logo) }}" class="templateLogo rounded-lg">
+                                <img src="{{ asset('events/logo/' . $event->logo) }}"
+                                    class="templateLogo rounded-lg">
                             </div>
                         @endif
                     </div>
@@ -224,9 +233,10 @@
                                 @endif
                             </div>
                             @if ($event->register == '1')
-                                <div style="background-color: {{ $event->register_button_color }}; color:{{ $event->register_text_color }}"
-                                    class="text-white text-center py-2 px-2 rounded-lg w-40 font-medium text-xl bg-secondary-100 cursor-pointer break-words">
-                                    {{ $event->register_text }}</div>
+                                <a href="{{ $event->register_link }}"
+                                    style="background-color: {{ $event->register_button_color }}; color:{{ $event->register_text_color }}"
+                                    class="text-white text-center py-2 px-2 rounded-lg w-40 font-medium text-xl bg-secondary-100 cursor-pointer break-words no-underline">
+                                    {{ $event->register_text }}</a>
                             @endif
                         </div>
                         @if ($event->banner != null)
@@ -240,7 +250,8 @@
                         @if ($event->logo != null)
                             <div v-show="logoBool"
                                 class="rounded-lg bg-white absolute top-12 left-52 right-0 w-24 p-1 shadow-2xl mx-auto">
-                                <img src="{{ asset('events/logo/' . $event->logo) }}" class="templateLogo rounded-lg">
+                                <img src="{{ asset('events/logo/' . $event->logo) }}"
+                                    class="templateLogo rounded-lg">
                             </div>
                         @endif
                     </div>

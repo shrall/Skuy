@@ -17,7 +17,7 @@ class Event extends Model
         'logo', 'banner', 'template', 'date',
         'email', 'instagram', 'whatsapp',
         'title_color', 'desc_color', 'date_color', 'contacts_color',
-        'register', 'register_text', 'register_button_color', 'register_text_color',
+        'register', 'register_text', 'register_link', 'register_button_color', 'register_text_color',
         'user_id'
     ];
 

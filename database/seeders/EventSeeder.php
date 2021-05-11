@@ -33,6 +33,7 @@ class EventSeeder extends Seeder
         $event->contacts_color = "#000000FF";
         $event->register = "1";
         $event->register_text = "Register";
+        $event->register_link = "https://forms.gle/Zph4dkkwuqnANZ3DA";
         $event->register_button_color = "#000000FF";
         $event->register_text_color = "#FFFFFFFF";
         $event->user_id = 1;
@@ -56,6 +57,7 @@ class EventSeeder extends Seeder
         $event->contacts_color = "#000000FF";
         $event->register = "1";
         $event->register_text = "Register";
+        $event->register_link = "https://forms.gle/Zph4dkkwuqnANZ3DA";
         $event->register_button_color = "#000000FF";
         $event->register_text_color = "#FFFFFFFF";
         $event->user_id = 1;

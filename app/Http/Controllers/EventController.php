@@ -96,6 +96,7 @@ class EventController extends Controller
             'contacts_color' => $request['contacts_color'],
             'register' => $register,
             'register_text' => $request['register_text'],
+            'register_link' => $request['register_link'],
             'register_button_color' => $request['register_button_color'],
             'register_text_color' => $request['register_text_color'],
             'user_id' => Auth::id(),

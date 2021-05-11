@@ -29,7 +29,8 @@ var vueApp = new Vue({
     registerBool: false,
     registerText: "Register",
     registerButtonColor : "#000000FF",
-    registerTextColor : "#FFFFFFFF"
+    registerTextColor : "#FFFFFFFF",
+    registerLink : ""
   },
   methods: {
     changeEmail: function () {
