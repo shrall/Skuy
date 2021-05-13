@@ -77,7 +77,7 @@ var vueApp = new Vue({
       $(".templateBanner").attr("src", "");
     },
     plusTemplate: function () {
-      if (this.eventTemplate >= 2) {
+      if (this.eventTemplate >= 3) {
         this.eventTemplate = 1;
       } else {
         this.eventTemplate++;
@@ -85,7 +85,7 @@ var vueApp = new Vue({
     },
     minusTemplate: function () {
       if (this.eventTemplate <= 1) {
-        this.eventTemplate = 2;
+        this.eventTemplate = 3;
       } else {
         this.eventTemplate--;
       }
