@@ -18,7 +18,7 @@
                         style="color:{{ $event->desc_color }};">{{ $event->description }}</span>
                     <span class="text-lg text-left mb-2" style="color: {{ $event->date_color }};">
                         <span class="fa fa-calendar-day text-2xl"></span> {{ $event->date }}</span>
-                    <div class="flex items-left space-x-8 text-5xl my-4" style="color: {{ $event->contacts_color }};">
+                    <div class="flex items-left space-x-8 text-5xl mb-2" style="color: {{ $event->contacts_color }};">
                         @if ($event->email != null)
                             <a target="_blank" href="{{ $event->email }}">
                                 <span class="fa fa-envelope hover:text-gray-600 transition ease-in-out duration-500"></span>
@@ -61,14 +61,14 @@
         @if ($event->template == 2)
             <div v-show="eventTemplate == 2" class="text-center bg-gray-50 w-full h-screen shadow-2xl grid grid-cols-12">
                 <div
-                    class="absolute top-0 bottom-0 w-5/12 flex flex-col justify-center content-center font-sans text-left ml-8 z-40">
+                    class="absolute top-0 bottom-0 w-1/2 flex flex-col justify-center content-center font-sans text-left ml-8 z-40">
                     <div class="text-3xl md:text-5xl font-semibold text-left mb-2 break-words"
                         style="color: {{ $event->title_color }};">{{ $event->title }}</div>
                     <span class="text-md md:text-lg text-left mb-2 break-words"
                         style="color:{{ $event->desc_color }};">{{ $event->description }}</span>
                     <span class="text-lg text-left mb-2" style="color: {{ $event->date_color }};">
                         <span class="fa fa-calendar-day text-2xl"></span> {{ $event->date }}</span>
-                    <div class="flex items-left space-x-8 text-5xl my-4" style="color: {{ $event->contacts_color }};">
+                    <div class="flex items-left space-x-8 text-5xl mb-2" style="color: {{ $event->contacts_color }};">
                         @if ($event->email != null)
                             <a target="_blank" href="{{ $event->email }}">
                                 <span class="fa fa-envelope hover:text-gray-600 transition ease-in-out duration-500"></span>

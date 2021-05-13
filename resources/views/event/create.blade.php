@@ -226,7 +226,7 @@
                                 v-bind:style="{color: descColor}">@{{ eventDesc }}</span>
                             <span class="text-lg text-left mb-2" v-bind:style="{color: dateColor}">
                                 <span class="fa fa-calendar-day text-2xl"></span> @{{ eventDate }}</span>
-                            <div class="flex items-left space-x-8 text-5xl my-4" v-bind:style="{color: contactsColor}">
+                            <div class="flex items-left space-x-8 text-5xl mb-2" v-bind:style="{color: contactsColor}">
                                 <a v-if="emailBool" target="_blank" v-bind:href="eventEmail">
                                     <span
                                         class="fa fa-envelope hover:text-gray-600 transition ease-in-out duration-500"></span>
@@ -280,7 +280,7 @@
                                 v-bind:style="{color: descColor}">@{{ eventDesc }}</span>
                             <span class="text-lg text-left mb-2" v-bind:style="{color: dateColor}">
                                 <span class="fa fa-calendar-day text-2xl"></span> @{{ eventDate }}</span>
-                            <div class="flex items-left space-x-8 text-5xl my-4" v-bind:style="{color: contactsColor}">
+                            <div class="flex items-left space-x-8 text-5xl mb-2" v-bind:style="{color: contactsColor}">
                                 <a v-if="emailBool" target="_blank" v-bind:href="eventEmail">
                                     <span
                                         class="fa fa-envelope hover:text-gray-600 transition ease-in-out duration-500"></span>
@@ -404,7 +404,7 @@
                             v-bind:style="{color: descColor}">@{{ eventDesc }}</span>
                         <span class="text-lg text-left mb-2" v-bind:style="{color: dateColor}">
                             <span class="fa fa-calendar-day text-2xl"></span> @{{ eventDate }}</span>
-                        <div class="flex items-left space-x-8 text-5xl my-4" v-bind:style="{color: contactsColor}">
+                        <div class="flex items-left space-x-8 text-5xl mb-2" v-bind:style="{color: contactsColor}">
                             <a v-if="emailBool" target="_blank" v-bind:href="eventEmail">
                                 <span
                                     class="fa fa-envelope hover:text-gray-600 transition ease-in-out duration-500"></span>
@@ -447,7 +447,7 @@
                             v-bind:style="{color: descColor}">@{{ eventDesc }}</span>
                         <span class="text-lg text-left mb-2" v-bind:style="{color: dateColor}">
                             <span class="fa fa-calendar-day text-2xl"></span> @{{ eventDate }}</span>
-                        <div class="flex items-left space-x-8 text-5xl my-4" v-bind:style="{color: contactsColor}">
+                        <div class="flex items-left space-x-8 text-5xl mb-2" v-bind:style="{color: contactsColor}">
                             <a v-if="emailBool" target="_blank" v-bind:href="eventEmail">
                                 <span
                                     class="fa fa-envelope hover:text-gray-600 transition ease-in-out duration-500"></span>
@@ -502,7 +502,7 @@
                             v-bind:style="{color: descColor}">@{{ eventDesc }}</span>
                         <span class="text-md text-left mb-2" v-bind:style="{color: dateColor}">
                             <span class="fa fa-calendar-day text-2xl"></span> @{{ eventDate }}</span>
-                        <div class="flex items-left space-x-8 text-4xl my-4" v-bind:style="{color: contactsColor}">
+                        <div class="flex items-left space-x-8 text-4xl mb-2" v-bind:style="{color: contactsColor}">
                             <a v-if="emailBool" target="_blank" v-bind:href="eventEmail">
                                 <span
                                     class="fa fa-envelope hover:text-gray-600 transition ease-in-out duration-500"></span>
@@ -554,7 +554,7 @@
                             v-bind:style="{color: descColor}">@{{ eventDesc }}</span>
                         <span class="text-lg text-left mb-2" v-bind:style="{color: dateColor}">
                             <span class="fa fa-calendar-day text-xl"></span> @{{ eventDate }}</span>
-                        <div class="flex items-left space-x-8 text-4xl my-4" v-bind:style="{color: contactsColor}">
+                        <div class="flex items-left space-x-8 text-4xl mb-2" v-bind:style="{color: contactsColor}">
                             <a v-if="emailBool" target="_blank" v-bind:href="eventEmail">
                                 <span
                                     class="fa fa-envelope hover:text-gray-600 transition ease-in-out duration-500"></span>
@@ -597,7 +597,7 @@
                             v-bind:style="{color: descColor}">@{{ eventDesc }}</span>
                         <span class="text-lg text-left mb-2 mx-8 z-40" v-bind:style="{color: dateColor}">
                             <span class="fa fa-calendar-day text-xl"></span> @{{ eventDate }}</span>
-                        <div class="flex items-left space-x-8 text-4xl my-4 mx-8 z-40" v-bind:style="{color: contactsColor}">
+                        <div class="flex items-left space-x-8 text-4xl mb-2 mx-8 z-40" v-bind:style="{color: contactsColor}">
                             <a v-if="emailBool" target="_blank" v-bind:href="eventEmail">
                                 <span
                                     class="fa fa-envelope hover:text-gray-600 transition ease-in-out duration-500"></span>
