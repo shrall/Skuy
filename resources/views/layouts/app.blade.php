@@ -32,6 +32,7 @@
         crossorigin="anonymous" />
 
 </head>
+
 <body>
     <div id="body-pd" class="font-skuy-secondary relative h-12 pt-20 pr-4 pl-24 transition-width duration-500">
 
@@ -40,14 +41,17 @@
     </div>
 
     <!-- SCRIPT -->
-    <script src="{{asset('js/app.js')}}"></script>
+    <script src="{{ asset('js/app.js') }}"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap5.js"></script>
     <script>
         $(document).ready(function() {
-            var thetable = $('.table').DataTable();
+            var thetable = $('.table').DataTable({
+            });
         });
+
     </script>
 </body>
+
 </html>

@@ -163,8 +163,9 @@
                                 <div class="skuyHeader text-2xl mb-2">Button Text</div>
                                 <input name="register_text" v-model="registerText" type="text" class="inputArea mb-4"
                                     placeholder="Max 20 Characters." maxlength="20">
-                                <div class="skuyHeader text-2xl mb-2">Google Form Link</div>
-                                <input name="register_link" v-model="registerLink" type="text" class="inputArea mb-4" :required="registerBool">
+                                <div class="skuyHeader text-2xl mb-2">Button Link</div>
+                                <input name="register_link" v-model="registerLink" type="text" class="inputArea mb-4"
+                                    :required="registerBool">
                                 <div class="skuyHeader text-2xl mb-2">Button Color</div>
                                 <input name="register_button_color" v-model="registerButtonColor" data-jscolor="{}"
                                     class="inputArea mb-2">
@@ -188,12 +189,12 @@
                         </div>
                         <div
                             class="w-full h-16 bg-secondary-300 flex flex-row items-center text-white font-skuy-primary-sub justify-between px-6">
-                            <button
+                            <button type="submit"
                                 class="text-center py-1 px-4 rounded-lg font-medium text-lg cursor-pointer z-10 bg-primary-250 hover:bg-primary-300">Submit</button>
-                            <button @click="preview = !preview"
+                            <div @click="preview = !preview"
                                 class="text-center py-1 px-4 rounded-lg font-medium text-lg cursor-pointer z-10 bg-secondary-200 hover:bg-dark-200">
                                 <span class="fa fa-eye"></span> Preview
-                            </button>
+                            </div>
                         </div>
                     </form>
                 </div>

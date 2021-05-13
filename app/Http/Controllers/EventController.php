@@ -102,7 +102,7 @@ class EventController extends Controller
             'user_id' => Auth::id(),
         ]);
 
-        return view('event.index');
+        return redirect()->route('event.index');
     }
 
     /**

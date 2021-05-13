@@ -41,9 +41,7 @@
                         <tr>
                             <th>#</th>
                             <th>Event Name</th>
-                            <th>Custom Link</th>
                             <th>Event Date</th>
-                            <th>Total Participant</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
@@ -51,10 +49,8 @@
                         @foreach (Auth::user()->events as $event)
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
-                                <td>{{ $event->title }}</td>
-                                <td>{{ $event->slug }}</td>
+                                <td>{{ $event->title }}<a target="_blank" class="no-underline" href={{ config('app.url') . "/event/" . $event->slug}}> <span class="fa fa-external-link-alt mr-2"></span></a></td>
                                 <td>{{ $event->date }}</td>
-                                <td>0</td>
                                 <td>
                                     <div class="w-1/6 relative">
                                         <button class="dropbtn p-1 fa fa-ellipsis-h text-2xl text-dark-300"

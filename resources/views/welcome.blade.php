@@ -36,7 +36,9 @@
                 <li data-menuanchor="teamPage" class="navItem"><a href="#teamPage">Our Team</a></li>
                 <li data-menuanchor="reviewPage" class="navItem"><a href="#reviewPage">Reviews</a></li>
                 <li data-menuanchor="contactPage" class="navItem"><a href="#contactPage">Contact Us</a></li>
-                <li class="navItem text-white bg-gradient-to-r from-secondary-400 to-secondary-200 py-1 px-8 rounded-lg"><a href="{{route('login')}}">Login</a></li>
+                <li
+                    class="navItem text-white bg-gradient-to-r from-secondary-400 to-secondary-200 py-1 px-8 rounded-lg">
+                    <a href="{{ route('login') }}">Login</a></li>
             </div>
         </ul>
         <ul id="menu" class="text-right mr-0 md:mr-8 flex flex-col space-y-12 md:hidden">
@@ -68,14 +70,15 @@
                 <div class="grid grid-cols-1 md:grid-cols-2">
                     <div
                         class="flex flex-col my-auto items-left ml-4 md:ml-12 z-0 justify-center content-center py-12 md:py-0">
-                        <span class="text-5xl md:text-6xl font-skuy-primary font-bold text-secondary-300 text-left mb-12 md:mb-4">
+                        <span
+                            class="text-5xl md:text-6xl font-skuy-primary font-bold text-secondary-300 text-left mb-12 md:mb-4">
                             Buat website acara kamu dengan Skuy!
                         </span>
                         <span
                             class="text-2xl md:text-3xl font-black font-skuy-primary-sub text-secondary-300 text-left  mb-12 md:mb-4">
                             Bikin event hebatmu jadi lebih menarik.
                         </span>
-                        <a href="{{route('register')}}"
+                        <a href="{{ route('register') }}"
                             class="text-white text-center bg-gradient-to-r from-primary-200 via-primary-100 to-primary-200 py-2 px-2 mb-24 rounded-lg w-72 font-medium text-2xl md:text-3xl cursor-pointer z-10 animate-gradient-xy font-skuy-primary">
                             Gabung Sekarang
                         </a>
@@ -203,10 +206,13 @@
                     <img src="{{ asset('img/webbuilderbg2.png') }}"
                         class="right-0 bottom-0 top-0 absolute z-0 w-0 md:w-1/4">
                     <img src="{{ asset('img/webbuilder.png') }}" class="mx-auto w-screen md:w-5/12 my-12 z-10">
-                    <button
-                        class="mx-auto text-white text-center bg-gradient-to-r from-primary-200 via-primary-100 to-primary-200 py-2 px-8 mb-24 rounded-lg w-80 font-medium text-3xl cursor-pointer z-10 animate-gradient-xy font-skuy-primary">
-                        <a href="builder.html">Coba Sekarang</a>
-                    </button>
+                    <form action="{{ route('register') }}" method="get" class="mx-auto ">
+                        @csrf
+                        <button type="submit"
+                            class="text-white text-center bg-gradient-to-r from-primary-200 via-primary-100 to-primary-200 py-2 px-8 mb-24 rounded-lg w-80 font-medium text-3xl cursor-pointer z-10 animate-gradient-xy font-skuy-primary">
+                            Coba Sekarang
+                        </button>
+                    </form>
                 </div>
             </div>
             <div class="section" id="section4">
