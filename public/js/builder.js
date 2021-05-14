@@ -97,15 +97,19 @@ var vueApp = new Vue({
             this.customLinkError = false;
             this.customLinkSuccess = false;
             this.customLinkBool = true;
-            $.get(url + "/api/event/" + this.customLink)
-                .done(function () {
-                    this.customLinkSuccess = false;
-                    this.customLinkError = true;
-                }.bind(this))
-                .fail(function () {
-                    this.customLinkError = false;
-                    this.customLinkSuccess = true;
-                }.bind(this))
+            $.get(url + "/api/event/" + this.customLink.replace(" ", "-"))
+                .done(
+                    function () {
+                        this.customLinkSuccess = false;
+                        this.customLinkError = true;
+                    }.bind(this)
+                )
+                .fail(
+                    function () {
+                        this.customLinkError = false;
+                        this.customLinkSuccess = true;
+                    }.bind(this)
+                )
                 .always(function () {
                     console.log("finished");
                 });
