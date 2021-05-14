@@ -46,7 +46,7 @@
                     </form>
                     <form action="{{ route('event.store') }}" method="post" enctype="multipart/form-data">
                         @csrf
-                        <div class="px-6 pb-8">
+                        <div class="px-6 pb-4">
                             <div class="skuyHeader text-3xl">Banner Templates</div>
                             <div
                                 class="rounded-3xl w-full bg-light-100 my-4 flex flex-col content-center text-center py-8">
@@ -185,16 +185,6 @@
                                     class="inputArea mb-2">
                             </div>
                             <div class="skuyHeader text-3xl my-4">Settings</div>
-                            <div class="skuyHeader text-2xl mb-2">Custom Link</div>
-                            <input v-on:keyup="checkCustomLink('{{ config('app.url') }}')" name="custom_link"
-                                v-model="customLink" type="text" class="inputArea mb-2" placeholder="Max 50 Characters."
-                                maxlength="50">
-                            <div v-show="customLinkSuccess" class="text-xl mb-2 font-skuy-primary text-success"><span
-                                    class="fa fa-fw fa-check"></span> Custom link is available!</div>
-                            <div v-show="customLinkError" class="text-xl mb-2 font-skuy-primary text-danger"><span
-                                    class="fa fa-fw fa-times"></span> Custom link is not available.</div>
-                            <div v-show="!customLinkSuccess && !customLinkError && customLinkBool" class="text-xl mb-2 font-skuy-primary"><span
-                                    class="fa fa-fw fa-spinner animate-spin"></span> Checking Availability..</div>
                             <div class="skuyHeader text-2xl mb-2">Title Color</div>
                             <input name="title_color" v-model="titleColor" data-jscolor="{}" class="inputArea mb-2">
                             <div class="skuyHeader text-2xl mb-2">Description Color</div>
@@ -204,10 +194,21 @@
                             <div class="skuyHeader text-2xl mb-2">Contacts Color</div>
                             <input name="contacts_color" v-model="contactsColor" data-jscolor="{}"
                                 class="inputArea mb-2">
+                            <div class="skuyHeader text-2xl mb-2">Custom Link</div>
+                            <input v-on:keyup="checkCustomLink('{{ config('app.url') }}')" name="custom_link"
+                                v-model="customLink" type="text" class="inputArea mb-2" placeholder="Max 50 Characters."
+                                maxlength="50">
+                            <div v-show="customLinkSuccess" class="text-xl font-skuy-primary text-success"><span
+                                    class="fa fa-fw fa-check"></span> Custom link is available!</div>
+                            <div v-show="customLinkError" class="text-xl font-skuy-primary text-danger"><span
+                                    class="fa fa-fw fa-times"></span> Custom link is not available.</div>
+                            <div v-show="!customLinkSuccess && !customLinkError && customLinkBool"
+                                class="text-xl font-skuy-primary"><span
+                                    class="fa fa-fw fa-spinner animate-spin"></span> Checking Availability..</div>
                         </div>
                         <div
                             class="w-full h-16 bg-secondary-300 flex flex-row items-center text-white font-skuy-primary-sub justify-between px-6">
-                            <button type="submit"
+                            <button type="submit" :disabled="customLinkError"
                                 class="text-center py-1 px-4 rounded-lg font-medium text-lg cursor-pointer z-10 bg-primary-250 hover:bg-primary-300">Submit</button>
                             <div @click="preview = !preview"
                                 class="text-center py-1 px-4 rounded-lg font-medium text-lg cursor-pointer z-10 bg-secondary-200 hover:bg-dark-200">
