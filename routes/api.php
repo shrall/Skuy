@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::post('api-register', [RegisterController::class, 'register']);
-Route::apiResource('api-event', EventController::class);
+Route::apiResource('event', EventController::class);
 
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {

@@ -186,8 +186,15 @@
                             </div>
                             <div class="skuyHeader text-3xl my-4">Settings</div>
                             <div class="skuyHeader text-2xl mb-2">Custom Link</div>
-                            <input name="custom_link" v-model="customLink" type="text" class="inputArea mb-2"
-                                placeholder="Max 50 Characters." maxlength="50">
+                            <input v-on:keyup="checkCustomLink('{{ config('app.url') }}')" name="custom_link"
+                                v-model="customLink" type="text" class="inputArea mb-2" placeholder="Max 50 Characters."
+                                maxlength="50">
+                            <div v-show="customLinkSuccess" class="text-xl mb-2 font-skuy-primary text-success"><span
+                                    class="fa fa-fw fa-check"></span> Custom link is available!</div>
+                            <div v-show="customLinkError" class="text-xl mb-2 font-skuy-primary text-danger"><span
+                                    class="fa fa-fw fa-times"></span> Custom link is not available.</div>
+                            <div v-show="!customLinkSuccess && !customLinkError && customLinkBool" class="text-xl mb-2 font-skuy-primary"><span
+                                    class="fa fa-fw fa-spinner animate-spin"></span> Checking Availability..</div>
                             <div class="skuyHeader text-2xl mb-2">Title Color</div>
                             <input name="title_color" v-model="titleColor" data-jscolor="{}" class="inputArea mb-2">
                             <div class="skuyHeader text-2xl mb-2">Description Color</div>
@@ -597,7 +604,8 @@
                             v-bind:style="{color: descColor}">@{{ eventDesc }}</span>
                         <span class="text-lg text-left mb-2 mx-8 z-40" v-bind:style="{color: dateColor}">
                             <span class="fa fa-calendar-day text-xl"></span> @{{ eventDate }}</span>
-                        <div class="flex items-left space-x-8 text-4xl mb-2 mx-8 z-40" v-bind:style="{color: contactsColor}">
+                        <div class="flex items-left space-x-8 text-4xl mb-2 mx-8 z-40"
+                            v-bind:style="{color: contactsColor}">
                             <a v-if="emailBool" target="_blank" v-bind:href="eventEmail">
                                 <span
                                     class="fa fa-envelope hover:text-gray-600 transition ease-in-out duration-500"></span>
