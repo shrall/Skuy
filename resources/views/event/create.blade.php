@@ -37,8 +37,12 @@
     <main>
         <div id="vue-app">
             <div v-show="!preview" class="grid grid-cols-4">
-                @include('event.create.sidebar')
-                @include('event.create.side_preview')
+                <div class="w-full bg-light-300 flex flex-col shadow-2xl">
+                    @include('event.create.sidebar')
+                </div>
+                <div class="col-span-3 w-full bg-light-50 px-12 py-8 text-center">
+                    @include('event.create.side_preview')
+                </div>
             </div>
             <div v-show="preview && !previewMobile" class="w-full h-screen bg-light-50 px-16 py-8 text-center">
                 @include('event.create.preview_desktop')
