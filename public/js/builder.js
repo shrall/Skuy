@@ -34,6 +34,11 @@ var vueApp = new Vue({
         customLinkBool: false,
         customLinkSuccess: false,
         customLinkError: false,
+        extraBool: false,
+        extraText: "Extra",
+        extraButtonColor: "#000000FF",
+        extraTextColor: "#FFFFFFFF",
+        extraTemplate: 1,
     },
     methods: {
         changeEmail: function () {
@@ -113,6 +118,20 @@ var vueApp = new Vue({
                 .always(function () {
                     console.log("finished");
                 });
+        },
+        plusExtraTemplate: function () {
+            if (this.extraTemplate >= 2) {
+                this.extraTemplate = 1;
+            } else {
+                this.extraTemplate++;
+            }
+        },
+        minusExtraTemplate: function () {
+            if (this.extraTemplate <= 1) {
+                this.extraTemplate = 2;
+            } else {
+                this.extraTemplate--;
+            }
         },
     },
     computed: {},
