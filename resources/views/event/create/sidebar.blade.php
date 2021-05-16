@@ -5,6 +5,7 @@
             <span class="fa fa-arrow-left mr-2"></span>Back
         </button>
     </form>
+    <div class="skuyHeader text-4xl mb-2 mx-6">Main Page</div>
     <form action="{{ route('event.store') }}" method="post" enctype="multipart/form-data">
         @csrf
         <div class="px-6 pb-4">
@@ -154,24 +155,68 @@
             <div v-show="extraBool">
                 <div class="rounded-3xl w-full bg-light-100 my-4 flex flex-col content-center text-center py-8">
                     <!-- note template 1  -->
-                    <div v-if="extraTemplate == 1" class="w-40 h-28 bg-light-300 mx-auto p-4 relative">
-                        <div class="w-6 h-6 bg-dark-100 rounded absolute right-6 top-4 z-10"></div>
-                        <div class="flex flex-col space-y-1 absolute top-0 bottom-0 left-6 justify-center">
-                            <div class="w-12 h-1 bg-primary-200"></div>
-                            <div class="w-12 h-1 bg-primary-200"></div>
-                            <div class="w-12 h-1 bg-primary-200"></div>
-                            <div class="w-12 h-1 bg-primary-200"></div>
+                    <div v-if="extraTemplate == 1"
+                        class="w-40 h-28 bg-light-300 mx-auto p-2 relative grid grid-cols-5 justify-items-center items-center">
+                        <div>
+                            <div class="w-6 h-6 bg-primary-100 rounded-full"></div>
+                            <div class="w-6 h-0.5 bg-dark-100 mt-1"></div>
+                            <div class="w-6 h-0.5 bg-dark-100 mt-1"></div>
                         </div>
-                        <div class="w-12 h-3/5 bg-primary-100 absolute right-4 top-6 z-0"></div>
+                        <div>
+                            <div class="w-6 h-6 bg-primary-100 rounded-full"></div>
+                            <div class="w-6 h-0.5 bg-dark-100 mt-1"></div>
+                            <div class="w-6 h-0.5 bg-dark-100 mt-1"></div>
+                        </div>
+                        <div>
+                            <div class="w-6 h-6 bg-primary-100 rounded-full"></div>
+                            <div class="w-6 h-0.5 bg-dark-100 mt-1"></div>
+                            <div class="w-6 h-0.5 bg-dark-100 mt-1"></div>
+                        </div>
+                        <div>
+                            <div class="w-6 h-6 bg-primary-100 rounded-full"></div>
+                            <div class="w-6 h-0.5 bg-dark-100 mt-1"></div>
+                            <div class="w-6 h-0.5 bg-dark-100 mt-1"></div>
+                        </div>
+                        <div>
+                            <div class="w-6 h-6 bg-primary-100 rounded-full"></div>
+                            <div class="w-6 h-0.5 bg-dark-100 mt-1"></div>
+                            <div class="w-6 h-0.5 bg-dark-100 mt-1"></div>
+                        </div>
                     </div>
-                    <!-- note template 2 -->
-                    <div v-if="extraTemplate == 2" class="w-40 h-28 bg-primary-50 mx-auto p-4 relative">
-                        <div class="w-6 h-6 bg-dark-100 rounded absolute right-6 top-4 z-10"></div>
-                        <div class="flex flex-col space-y-1 mt-2 justify-center content-center h-full">
-                            <div class="w-5/12 h-1 bg-primary-200"></div>
-                            <div class="w-5/12 h-1 bg-primary-200"></div>
-                            <div class="w-5/12 h-1 bg-primary-200"></div>
-                            <div class="w-5/12 h-1 bg-primary-200"></div>
+                    <!-- note template 2  -->
+                    <div v-if="extraTemplate == 2"
+                        class="w-40 h-28 bg-light-300 mx-auto p-2 relative grid grid-cols-4 justify-items-center items-center">
+                        <div class="bg-gray-300 h-12 rounded-md w-7 px-0.5 relative">
+                            <div class="w-6 h-6 bg-dark-100 rounded-full absolute -top-0.5"></div>
+                            <div class="absolute top-6">
+                                <div class="w-6 h-2px bg-dark-100 mt-2px"></div>
+                                <div class="w-6 h-2px bg-dark-100 mt-2px"></div>
+                                <div class="w-6 h-2px bg-dark-100 mt-2px"></div>
+                            </div>
+                        </div>
+                        <div class="bg-gray-300 h-12 rounded-md w-7 px-0.5 relative">
+                            <div class="w-6 h-6 bg-dark-100 rounded-full absolute -top-0.5"></div>
+                            <div class="absolute top-6">
+                                <div class="w-6 h-2px bg-dark-100 mt-2px"></div>
+                                <div class="w-6 h-2px bg-dark-100 mt-2px"></div>
+                                <div class="w-6 h-2px bg-dark-100 mt-2px"></div>
+                            </div>
+                        </div>
+                        <div class="bg-gray-300 h-12 rounded-md w-7 px-0.5 relative">
+                            <div class="w-6 h-6 bg-dark-100 rounded-full absolute -top-0.5"></div>
+                            <div class="absolute top-6">
+                                <div class="w-6 h-2px bg-dark-100 mt-2px"></div>
+                                <div class="w-6 h-2px bg-dark-100 mt-2px"></div>
+                                <div class="w-6 h-2px bg-dark-100 mt-2px"></div>
+                            </div>
+                        </div>
+                        <div class="bg-gray-300 h-12 rounded-md w-7 px-0.5 relative">
+                            <div class="w-6 h-6 bg-dark-100 rounded-full absolute -top-0.5"></div>
+                            <div class="absolute top-6">
+                                <div class="w-6 h-2px bg-dark-100 mt-2px"></div>
+                                <div class="w-6 h-2px bg-dark-100 mt-2px"></div>
+                                <div class="w-6 h-2px bg-dark-100 mt-2px"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -187,8 +232,7 @@
                 <input name="extra_text" v-model="extraText" type="text" class="inputArea mb-4"
                     placeholder="Max 20 Characters." maxlength="20">
                 <div class="skuyHeader text-2xl mb-2">Button Color</div>
-                <input name="extra_button_color" v-model="extraButtonColor" data-jscolor="{}"
-                    class="inputArea mb-2">
+                <input name="extra_button_color" v-model="extraButtonColor" data-jscolor="{}" class="inputArea mb-2">
                 <div class="skuyHeader text-2xl mb-2">Text Color</div>
                 <input name="extra_text_color" v-model="extraTextColor" data-jscolor="{}" class="inputArea mb-2">
             </div>
@@ -209,7 +253,8 @@
             <div v-show="customLinkError" class="text-xl font-skuy-primary text-danger"><span
                     class="fa fa-fw fa-times"></span> Custom link is not available.</div>
             <div v-show="!customLinkSuccess && !customLinkError && customLinkBool" class="text-xl font-skuy-primary">
-                <span class="fa fa-fw fa-spinner animate-spin"></span> Checking Availability..</div>
+                <span class="fa fa-fw fa-spinner animate-spin"></span> Checking Availability..
+            </div>
         </div>
         <div
             class="w-full h-16 bg-secondary-300 flex flex-row items-center text-white font-skuy-primary-sub justify-between px-6">
