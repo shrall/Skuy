@@ -6,14 +6,12 @@
     </div>
 
     <div class="flex items-center">
-        <div class="w-9 h-9 flex justify-center rounded-full overflow-hidden md:w-10 md:h-10">
+        <div class="w-9 h-9 flex justify-center self-center rounded-full overflow-hidden md:w-10 md:h-10">
             <img src="{{ asset('img/skuycon.png') }}" alt="" class="w-10 md:w-11">
         </div>
-        <div>
-            <p class="text-secondary-300">
-                {{ Auth::user()->name }}
-            </p>
-        </div>
+        <p class="text-secondary-300 self-center">
+            {{ Auth::user()->name }}
+        </p>
     </div>
 </header>
 
@@ -38,7 +36,7 @@
         </div>
         <form method="POST" action="{{ route('logout') }}">
             @csrf
-            <button type="submit" class="nav__link">
+            <button type="submit" class="nav__link focus:outline-none">
                 <i class='bx bx-log-out text-xl'></i>
                 <span class="">Log Out</span>
             </button>

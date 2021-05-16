@@ -29,7 +29,7 @@
             class="flex @auth flex-col items-center place-content-center @endauth @guest justify-items-center @endguest p-8 bg-white border-white rounded-lg shadow-2xl h-vh-90">
             @guest
                 <div class="flex justify-between w-full">
-                    <div class="m-20 ml-28">
+                    <div class="m-20 ml-28">s
                         <img src="{{ asset('img/skuylogo.png') }}" alt="" srcset="" class="w-36">
                         <p class="text-secondary-300 font-bold text-xl mb-16 mt-10 font-skuy-secondary">Website Builder
                             terpercaya untuk para Event <br>

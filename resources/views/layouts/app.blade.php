@@ -17,14 +17,17 @@
     <meta property="og:image" content="https://eventskuy.web.app/{{ asset('img/skuycon.png') }}">
     <meta property="og:url" content="https://eventskuy.web.app/">
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('img/skuycon.png') }}" />
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
     <!-- BOX ICON -->
     <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
 
-    <link type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
-        rel="stylesheet">
+{{--    <link type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"--}}
+{{--        rel="stylesheet">--}}
+    <link rel="stylesheet" href="{{ asset('css/bootstrap/bootstrap.css') }}">
     <link type="text/css" href="https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap5.min.css" rel="stylesheet">
+
+    {{--TAILWIND--}}
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
