@@ -52,8 +52,9 @@
                 class="fa fa-chevron-circle-right text-2xl cursor-pointer hover:text-dark-300"></span>
         </div>
         <input type="hidden" name="template" v-model="eventTemplate">
-        <div class="skuyHeader text-3xl">Logo</div>
-        <div id="inputLogo" class="border-dashed border-2 border-gray-400 rounded-3xl w-full bg-light-200 my-4 py-12">
+        <div class="skuyHeader text-3xl mb-2">Logo</div>
+        <div v-show="!logoBool" id="inputLogo"
+            class="border-dashed border-2 border-gray-400 rounded-3xl w-full bg-light-200 my-4 py-12">
             <div class="flex flex-col content-center text-center ">
                 <input name="logo" type="file" id="logoElem" accept="image/*" onchange="handleLogoFiles(this.files)"
                     class="hidden">
@@ -72,8 +73,9 @@
             <span @click="deleteLogo"
                 class="fa fa-times cursor-pointer hover:text-red-600 text-4xl px-2 py-6 col-span-2"></span>
         </div>
-        <div class="skuyHeader text-3xl">Banner Background</div>
-        <div id="inputBanner" class="border-dashed border-2 border-gray-400 rounded-3xl w-full bg-light-200 my-4 py-12">
+        <div class="skuyHeader text-3xl mb-2">Banner Background</div>
+        <div v-show="!bannerBool" id="inputBanner"
+            class="border-dashed border-2 border-gray-400 rounded-3xl w-full bg-light-200 my-4 py-12">
             <div class="flex flex-col content-center text-center ">
                 <input name="banner" type="file" id="bannerElem" accept="image/*"
                     onchange="handleBannerFiles(this.files)" class="hidden">
@@ -231,6 +233,57 @@
             <input name="extra_button_color" v-model="extraButtonColor" data-jscolor="{}" class="inputArea mb-2">
             <div class="skuyHeader text-2xl mb-2">Text Color</div>
             <input name="extra_text_color" v-model="extraTextColor" data-jscolor="{}" class="inputArea mb-2">
+            <div class="skuyHeader text-3xl my-2">Extra Details</div>
+            <div class="skuyHeader text-2xl mb-2">Heading</div>
+            <input name="extra_heading" v-model="extraMainHeading" type="text" class="inputArea mb-4"
+                placeholder="Extra Page's Heading, max 25 characters." maxlength="25">
+            <div class="flex flex-row mb-2 items-center">
+                <div class="skuyHeader text-2xl mr-2">Component</div>
+                <div v-show="extraComponentCount < 5" @click="extraComponentCount++"
+                    class="rounded-lg bg-gray-300 hover:bg-gray-400 cursor-pointer text-2xl mr-2"> <span
+                        class="fa fa-fw fa-plus text-secondary-300"></span> </div>
+                <div v-show="extraComponentCount > 1" @click="extraComponentCount--"
+                    class="rounded-lg bg-gray-300 hover:bg-gray-400 cursor-pointer text-2xl"> <span
+                        class="fa fa-fw fa-minus text-secondary-300"></span> </div>
+            </div>
+            <div
+                class="flex flex-col mb-2 rounded-md bg-light-100 hover:bg-gray-100 cursor-pointer text-2xl font-skuy-primary text-dark-300 p-1 ml-2">
+                <div class="flex flex-row items-center justify-between "
+                    @click="extraComponent1Clicked = !extraComponent1Clicked">
+                    <div class="skuyHeader text-2xl mr-2">Component 1</div>
+                    <span class="fa fa-fw text-secondary-300"
+                        v-bind:class="{ 'fa-chevron-down': !extraComponent1Clicked,'fa-chevron-up': extraComponent1Clicked }"></span>
+                </div>
+                <div v-show="extraComponent1Clicked" class="mx-1">
+                    <div class="skuyHeader text-xl mb-2">Head</div>
+                    <input name="extra_1_image_head" v-model="extraImage1Head" type="text" class="inputArea mb-4"
+                        placeholder="Max 10 Characters." maxlength="10">
+                    <div class="skuyHeader text-xl mb-2">Body</div>
+                    <input name="extra_1_image_body" v-model="extraImage1Body" type="text" class="inputArea mb-4"
+                        placeholder="Max 30 Characters." maxlength="30">
+                    <div class="skuyHeader text-xl">Image</div>
+                    <div v-show="!extraImage1Bool" id="inputImageComponent1"
+                        class="border-dashed border-2 border-gray-400 rounded-3xl w-full bg-light-200 my-4 py-12">
+                        <div class="flex flex-col content-center text-center ">
+                            <input name="component1" type="file" id="component1Elem" accept="image/*"
+                                onchange="handleImageComponent1Files(this.files)" class="hidden">
+                            <label for="component1Elem"
+                                class="fa fa-image text-dark-300 text-3xl cursor-pointer hover:text-dark-200"></label>
+                            <span class="text-dark-300">Drag and drop or browse</span>
+                        </div>
+                    </div>
+                    <div v-show="extraImage1Bool"
+                        class="bg-light-100 rounded-xl w-full grid grid-cols-10 px-6 py-4 text-dark-200 font-skuy-primary-sub font-bold justify-between mb-8 space-x-2 items-center">
+                        <img id="imageComponent1" src="" class="w-20 col-span-3">
+                        <div class="flex flex-col py-4 w-full col-span-5">
+                            <span v-html="extraImage1Name" class="text-lg break-words"></span>
+                            <div v-html="extraImage1Size" class="text-sm text-secondary-200"></div>
+                        </div>
+                        <span @click="deleteImage1"
+                            class="fa fa-times cursor-pointer hover:text-red-600 text-4xl px-2 py-6 col-span-2"></span>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="skuyHeader text-3xl my-4">Settings</div>
         <div class="skuyHeader text-2xl mb-2">Title Color</div>

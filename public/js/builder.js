@@ -39,33 +39,44 @@ var vueApp = new Vue({
         extraButtonColor: "#000000FF",
         extraTextColor: "#FFFFFFFF",
         extraTemplate: 1,
-        extraPreviewBool : false,
-        extraMainHeading : "Heading",
-        extraImage1 : "",
+        extraPreviewBool: false,
+        extraMainHeading: "Heading",
+        extraImage1: "",
+        extraImage1Bool: false,
         extraImage1Name: "",
         extraImage1Size: "",
         extraImage1Head: "Head 1",
         extraImage1Body: "Body 1",
-        extraImage2 : "",
+        extraImage2: "",
+        extraImage2Bool: false,
         extraImage2Name: "",
         extraImage2Size: "",
         extraImage2Head: "Head 2",
         extraImage2Body: "Body 2",
-        extraImage3 : "",
+        extraImage3: "",
+        extraImage3Bool: false,
         extraImage3Name: "",
         extraImage3Size: "",
         extraImage3Head: "Head 3",
         extraImage3Body: "Body 3",
-        extraImage4 : "",
+        extraImage4: "",
+        extraImage4Bool: false,
         extraImage4Name: "",
         extraImage4Size: "",
         extraImage4Head: "Head 4",
         extraImage4Body: "Body 4",
-        extraImage5 : "",
+        extraImage5: "",
+        extraImage5Bool: false,
         extraImage5Name: "",
         extraImage5Size: "",
         extraImage5Head: "Head 5",
-        extraImage5Body: "Body 5"
+        extraImage5Body: "Body 5",
+        extraComponentCount: 1,
+        extraComponent1Clicked: false,
+        extraComponent2Clicked: false,
+        extraComponent3Clicked: false,
+        extraComponent4Clicked: false,
+        extraComponent5Clicked: false,
     },
     methods: {
         changeEmail: function () {
@@ -159,6 +170,14 @@ var vueApp = new Vue({
             } else {
                 this.extraTemplate--;
             }
+        },
+        deleteImage1: function () {
+            this.extraImage1Bool = false;
+            this.extraImage1 = "";
+            this.extraImage1Name = "";
+            this.extraImage1Size = "";
+            $("#imageComponent1").attr("src", "");
+            $(".templateImageComponent1").attr("src", "");
         },
     },
     computed: {},
@@ -267,5 +286,41 @@ function previewBanner(file) {
         vueApp.bannerSize = bytesToMegaBytes(file.size);
         $("#bannerImg").attr("src", reader.result);
         $(".templateBanner").attr("src", reader.result);
+    };
+}
+
+// `component 1 drop
+let imageComponent1Drop = document.getElementById("inputImageComponent1");
+
+// Prevent default drag behaviors
+["dragenter", "dragover", "dragleave", "drop"].forEach((extraImage1) => {
+    imageComponent1Drop.addEventListener(extraImage1, preventDefaults, false);
+    document.body.addEventListener(extraImage1, preventDefaults, false);
+});
+
+// Handle dropped files
+imageComponent1Drop.addEventListener("drop", handleImageComponent1Drop, false);
+
+function handleImageComponent1Drop(e) {
+    var dt = e.dataTransfer;
+    var files = dt.files;
+    handleImageComponent1Files(files);
+}
+
+function handleImageComponent1Files(files) {
+    files = [...files];
+    files.forEach(previewImageComponent1);
+}
+
+function previewImageComponent1(file) {
+    let reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onloadend = function () {
+        vueApp.extraImage1Bool = true;
+        vueApp.extraImage1 = file;
+        vueApp.extraImage1Name = file.name;
+        vueApp.extraImage1Size = bytesToMegaBytes(file.size);
+        $("#imageComponent1").attr("src", reader.result);
+        $(".templateImageComponent1").attr("src", reader.result);
     };
 }
