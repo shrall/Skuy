@@ -10,8 +10,8 @@
         class="fa fa-fw fa-mobile-alt text-xl hover:text-gray-500 focus:outline-none"></button>
 </div>
 <!-- note template 1 -->
-<div v-show="eventTemplate == 1"
-    class="text-center rounded-lg bg-gray-50 w-full h-full shadow-2xl grid grid-cols-12 py-8">
+<div v-show="eventTemplate == 1 && !extraPreviewBool"
+    class="text-center rounded-lg bg-gray-50 w-full h-full shadow-2xl grid grid-cols-12 py-8 relative">
     <div class="col-span-7 flex flex-col justify-center font-sans text-left px-8">
         <div v-show='eventTitle == ""' v-bind:style="{color: titleColor}"
             class="text-5xl font-semibold text-left mb-2 break-words">Judul
@@ -45,9 +45,14 @@
     <div v-show="logoBool" class="rounded-lg bg-white absolute top-12 right-36 w-24 p-1 shadow-2xl">
         <img class="templateLogo rounded-lg">
     </div>
+    <div v-show="extraBool" v-bind:style="{'background-color': extraButtonColor, color:extraTextColor}"
+        class="text-white text-center py-2 px-2 rounded-lg w-40 font-medium text-xl bg-secondary-100 cursor-pointer break-words absolute right-4 bottom-4"
+        @click="extraPreviewBool = !extraPreviewBool">
+        @{{ extraText }} <span class="fa fa-fw fa-arrow-right ml-2"></span> </div>
 </div>
 <!-- note template 2  -->
-<div v-show="eventTemplate == 2" class="text-center rounded-lg bg-gray-50 w-full h-full shadow-2xl grid grid-cols-12">
+<div v-show="eventTemplate == 2 && !extraPreviewBool"
+    class="text-center rounded-lg bg-gray-50 w-full h-full shadow-2xl grid grid-cols-12">
     <div
         class="absolute top-0 bottom-0 w-5/12 flex flex-col justify-center content-center font-sans text-left ml-8 z-40">
         <div v-show='eventTitle == ""' class="text-5xl font-semibold text-left mb-2 break-words"
@@ -87,7 +92,7 @@
     </div>
 </div>
 <!-- note template 3 -->
-<div v-show="eventTemplate == 3"
+<div v-show="eventTemplate == 3 && !extraPreviewBool"
     class="text-center rounded-lg bg-gray-50 w-full h-full shadow-2xl grid grid-rows-6 py-8">
     <div v-show="bannerBool" class="row-span-3 flex flex-col justify-center px-2 mx-12 mt-1 h-9/10">
         <img class="templateBanner object-contain h-full">
@@ -127,4 +132,57 @@
     <div v-show="logoBool" class="rounded-lg bg-white absolute w-24 p-1 mt-4 ml-16 shadow-2xl">
         <img class="templateLogo rounded-lg">
     </div>
+</div>
+<!-- note extra template 1 -->
+<div v-show="extraTemplate == 1 && extraPreviewBool"
+    class="text-center rounded-lg bg-gray-50 w-full h-full shadow-2xl grid grid-cols-5 py-8 justify-items-center items-center relative">
+    <div class="text-dark-300 text-center font-medium text-5xl absolute left-0 right-0 top-8 mx-auto break-words">
+        @{{ extraMainHeading }}</div>
+    <div class="font-skuy-primary-sub">
+        <div v-show="!extraImage1Bool" class="w-40 h-40 bg-white rounded-full flex flex-col justify-center">
+            <div class="text-2xl text-dark-300 font-skuy-primary">Image 1</div>
+            <span class="fa fa-image text-dark-300 text-2xl"></span>
+        </div>
+        <div v-show="extraImage1Bool" class="w-40 h-40 bg-white rounded-full flex flex-col justify-center">
+            <img class="rounded-full templateImageComponent1 object-contain w-40 h-40">
+        </div>
+        <div class="text-xl w-40 h-6 mt-1 font-bold">@{{ extraImage1Head }}</div>
+        <div class="text-lg w-40 h-6 mt-1">@{{ extraImage1Body }}</div>
+    </div>
+    <div class="font-skuy-primary-sub">
+        <div class="w-40 h-40 bg-white rounded-full flex flex-col justify-center">
+            <div class="text-2xl text-dark-300 font-skuy-primary">Image 2</div>
+            <span class="fa fa-image text-dark-300 text-2xl"></span>
+        </div>
+        <div class="text-xl w-40 h-6 mt-1 font-bold">@{{ extraImage2Head }}</div>
+        <div class="text-lg w-40 h-6 mt-1">@{{ extraImage2Body }}</div>
+    </div>
+    <div class="font-skuy-primary-sub">
+        <div class="w-40 h-40 bg-white rounded-full flex flex-col justify-center">
+            <div class="text-2xl text-dark-300 font-skuy-primary">Image 3</div>
+            <span class="fa fa-image text-dark-300 text-2xl"></span>
+        </div>
+        <div class="text-xl w-40 h-6 mt-1 font-bold">@{{ extraImage3Head }}</div>
+        <div class="text-lg w-40 h-6 mt-1">@{{ extraImage3Body }}</div>
+    </div>
+    <div class="font-skuy-primary-sub">
+        <div class="w-40 h-40 bg-white rounded-full flex flex-col justify-center">
+            <div class="text-2xl text-dark-300 font-skuy-primary">Image 4</div>
+            <span class="fa fa-image text-dark-300 text-2xl"></span>
+        </div>
+        <div class="text-xl w-40 h-6 mt-1 font-bold">@{{ extraImage4Head }}</div>
+        <div class="text-lg w-40 h-6 mt-1">@{{ extraImage4Body }}</div>
+    </div>
+    <div class="font-skuy-primary-sub">
+        <div class="w-40 h-40 bg-white rounded-full flex flex-col justify-center">
+            <div class="text-2xl text-dark-300 font-skuy-primary">Image 5</div>
+            <span class="fa fa-image text-dark-300 text-2xl"></span>
+        </div>
+        <div class="text-xl w-40 h-6 mt-1 font-bold">@{{ extraImage5Head }}</div>
+        <div class="text-lg w-40 h-6 mt-1">@{{ extraImage5Body }}</div>
+    </div>
+    <div v-show="extraBool" v-bind:style="{'background-color': extraButtonColor, color:extraTextColor}"
+        class="text-white text-center py-2 px-2 rounded-lg w-40 font-medium text-xl bg-secondary-100 cursor-pointer break-words absolute left-4 bottom-4"
+        @click="extraPreviewBool = !extraPreviewBool"><span class="fa fa-fw fa-arrow-left mr-2"></span>
+        Back </div>
 </div>
