@@ -157,10 +157,11 @@
 </div>
 <!-- note extra template 1 -->
 <div v-show="extraTemplate == 1 && extraPreviewBool"
-    class="text-center rounded-lg bg-gray-50 w-7/12 h-vh-90 fixed left-3.5/10 shadow-2xl grid grid-cols-5 justify-items-center items-center">
+    class="text-center rounded-lg bg-gray-50 w-7/12 h-vh-90 fixed left-3.5/10 shadow-2xl grid justify-items-center items-center"
+    v-bind:class="{ 'grid-cols-1': extraComponentCount == 1, 'grid-cols-2': extraComponentCount == 2, 'grid-cols-3': extraComponentCount == 3, 'grid-cols-4': extraComponentCount == 4, 'grid-cols-5': extraComponentCount == 5}">
     <div class="text-dark-300 text-center font-medium text-5xl absolute left-0 right-0 top-8 mx-auto break-words">
         @{{ extraMainHeading }}</div>
-    <div class="font-skuy-primary-sub">
+    <div v-show="extraComponentCount >=1" class="font-skuy-primary-sub">
         <div v-show="!extraImage1Bool" class="w-40 h-40 bg-white rounded-full flex flex-col justify-center">
             <div class="text-2xl text-dark-300 font-skuy-primary">Image 1</div>
             <span class="fa fa-image text-dark-300 text-2xl"></span>
@@ -171,7 +172,7 @@
         <div class="text-xl w-40 h-6 mt-1 font-bold">@{{ extraImage1Head }}</div>
         <div class="text-lg w-40 h-6 mt-1">@{{ extraImage1Body }}</div>
     </div>
-    <div class="font-skuy-primary-sub">
+    <div v-show="extraComponentCount >=2" class="font-skuy-primary-sub">
         <div v-show="!extraImage2Bool" class="w-40 h-40 bg-white rounded-full flex flex-col justify-center">
             <div class="text-2xl text-dark-300 font-skuy-primary">Image 2</div>
             <span class="fa fa-image text-dark-300 text-2xl"></span>
@@ -182,7 +183,7 @@
         <div class="text-xl w-40 h-6 mt-1 font-bold">@{{ extraImage2Head }}</div>
         <div class="text-lg w-40 h-6 mt-1">@{{ extraImage2Body }}</div>
     </div>
-    <div class="font-skuy-primary-sub">
+    <div v-show="extraComponentCount >=3" class="font-skuy-primary-sub">
         <div v-show="!extraImage3Bool" class="w-40 h-40 bg-white rounded-full flex flex-col justify-center">
             <div class="text-2xl text-dark-300 font-skuy-primary">Image 3</div>
             <span class="fa fa-image text-dark-300 text-2xl"></span>
@@ -193,7 +194,7 @@
         <div class="text-xl w-40 h-6 mt-1 font-bold">@{{ extraImage3Head }}</div>
         <div class="text-lg w-40 h-6 mt-1">@{{ extraImage3Body }}</div>
     </div>
-    <div class="font-skuy-primary-sub">
+    <div v-show="extraComponentCount >=4" class="font-skuy-primary-sub">
         <div v-show="!extraImage4Bool" class="w-40 h-40 bg-white rounded-full flex flex-col justify-center">
             <div class="text-2xl text-dark-300 font-skuy-primary">Image 4</div>
             <span class="fa fa-image text-dark-300 text-2xl"></span>
@@ -204,7 +205,7 @@
         <div class="text-xl w-40 h-6 mt-1 font-bold">@{{ extraImage4Head }}</div>
         <div class="text-lg w-40 h-6 mt-1">@{{ extraImage4Body }}</div>
     </div>
-    <div class="font-skuy-primary-sub">
+    <div v-show="extraComponentCount >=5" class="font-skuy-primary-sub">
         <div v-show="!extraImage5Bool" class="w-40 h-40 bg-white rounded-full flex flex-col justify-center">
             <div class="text-2xl text-dark-300 font-skuy-primary">Image 5</div>
             <span class="fa fa-image text-dark-300 text-2xl"></span>
