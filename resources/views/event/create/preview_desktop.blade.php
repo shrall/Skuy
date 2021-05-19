@@ -139,10 +139,6 @@
     <div class="text-dark-300 text-center font-medium text-5xl absolute left-0 right-0 top-8 mx-auto break-words">
         @{{ extraMainHeading }}</div>
     <div class="font-skuy-primary-sub">
-        <div v-show="!extraImage1Bool" class="w-40 h-40 bg-white rounded-full flex flex-col justify-center">
-            <div class="text-2xl text-dark-300 font-skuy-primary">Image 1</div>
-            <span class="fa fa-image text-dark-300 text-2xl"></span>
-        </div>
         <div v-show="extraImage1Bool" class="w-40 h-40 bg-white rounded-full flex flex-col justify-center">
             <img class="rounded-full templateImageComponent1 object-contain w-40 h-40">
         </div>
@@ -150,33 +146,29 @@
         <div class="text-lg w-40 h-6 mt-1">@{{ extraImage1Body }}</div>
     </div>
     <div class="font-skuy-primary-sub">
-        <div class="w-40 h-40 bg-white rounded-full flex flex-col justify-center">
-            <div class="text-2xl text-dark-300 font-skuy-primary">Image 2</div>
-            <span class="fa fa-image text-dark-300 text-2xl"></span>
+        <div v-show="extraImage2Bool" class="w-40 h-40 bg-white rounded-full flex flex-col justify-center">
+            <img class="rounded-full templateImageComponent2 object-contain w-40 h-40">
         </div>
         <div class="text-xl w-40 h-6 mt-1 font-bold">@{{ extraImage2Head }}</div>
         <div class="text-lg w-40 h-6 mt-1">@{{ extraImage2Body }}</div>
     </div>
     <div class="font-skuy-primary-sub">
-        <div class="w-40 h-40 bg-white rounded-full flex flex-col justify-center">
-            <div class="text-2xl text-dark-300 font-skuy-primary">Image 3</div>
-            <span class="fa fa-image text-dark-300 text-2xl"></span>
+        <div v-show="extraImage3Bool" class="w-40 h-40 bg-white rounded-full flex flex-col justify-center">
+            <img class="rounded-full templateImageComponent3 object-contain w-40 h-40">
         </div>
         <div class="text-xl w-40 h-6 mt-1 font-bold">@{{ extraImage3Head }}</div>
         <div class="text-lg w-40 h-6 mt-1">@{{ extraImage3Body }}</div>
     </div>
     <div class="font-skuy-primary-sub">
-        <div class="w-40 h-40 bg-white rounded-full flex flex-col justify-center">
-            <div class="text-2xl text-dark-300 font-skuy-primary">Image 4</div>
-            <span class="fa fa-image text-dark-300 text-2xl"></span>
+        <div v-show="extraImage4Bool" class="w-40 h-40 bg-white rounded-full flex flex-col justify-center">
+            <img class="rounded-full templateImageComponent4 object-contain w-40 h-40">
         </div>
         <div class="text-xl w-40 h-6 mt-1 font-bold">@{{ extraImage4Head }}</div>
         <div class="text-lg w-40 h-6 mt-1">@{{ extraImage4Body }}</div>
     </div>
     <div class="font-skuy-primary-sub">
-        <div class="w-40 h-40 bg-white rounded-full flex flex-col justify-center">
-            <div class="text-2xl text-dark-300 font-skuy-primary">Image 5</div>
-            <span class="fa fa-image text-dark-300 text-2xl"></span>
+        <div v-show="extraImage5Bool" class="w-40 h-40 bg-white rounded-full flex flex-col justify-center">
+            <img class="rounded-full templateImageComponent5 object-contain w-40 h-40">
         </div>
         <div class="text-xl w-40 h-6 mt-1 font-bold">@{{ extraImage5Head }}</div>
         <div class="text-lg w-40 h-6 mt-1">@{{ extraImage5Body }}</div>

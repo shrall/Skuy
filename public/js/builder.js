@@ -179,6 +179,38 @@ var vueApp = new Vue({
             $("#imageComponent1").attr("src", "");
             $(".templateImageComponent1").attr("src", "");
         },
+        deleteImage2: function () {
+            this.extraImage2Bool = false;
+            this.extraImage2 = "";
+            this.extraImage2Name = "";
+            this.extraImage2Size = "";
+            $("#imageComponent2").attr("src", "");
+            $(".templateImageComponent2").attr("src", "");
+        },
+        deleteImage3: function () {
+            this.extraImage3Bool = false;
+            this.extraImage3 = "";
+            this.extraImage3Name = "";
+            this.extraImage3Size = "";
+            $("#imageComponent3").attr("src", "");
+            $(".templateImageComponent3").attr("src", "");
+        },
+        deleteImage4: function () {
+            this.extraImage4Bool = false;
+            this.extraImage4 = "";
+            this.extraImage4Name = "";
+            this.extraImage4Size = "";
+            $("#imageComponent4").attr("src", "");
+            $(".templateImageComponent4").attr("src", "");
+        },
+        deleteImage5: function () {
+            this.extraImage5Bool = false;
+            this.extraImage5 = "";
+            this.extraImage5Name = "";
+            this.extraImage5Size = "";
+            $("#imageComponent5").attr("src", "");
+            $(".templateImageComponent5").attr("src", "");
+        },
     },
     computed: {},
 });
@@ -322,5 +354,149 @@ function previewImageComponent1(file) {
         vueApp.extraImage1Size = bytesToMegaBytes(file.size);
         $("#imageComponent1").attr("src", reader.result);
         $(".templateImageComponent1").attr("src", reader.result);
+    };
+}
+
+// `component 2 drop
+let imageComponent2Drop = document.getElementById("inputImageComponent2");
+
+// Prevent default drag behaviors
+["dragenter", "dragover", "dragleave", "drop"].forEach((extraImage2) => {
+    imageComponent2Drop.addEventListener(extraImage2, preventDefaults, false);
+    document.body.addEventListener(extraImage2, preventDefaults, false);
+});
+
+// Handle dropped files
+imageComponent2Drop.addEventListener("drop", handleImageComponent2Drop, false);
+
+function handleImageComponent2Drop(e) {
+    var dt = e.dataTransfer;
+    var files = dt.files;
+    handleImageComponent2Files(files);
+}
+
+function handleImageComponent2Files(files) {
+    files = [...files];
+    files.forEach(previewImageComponent2);
+}
+
+function previewImageComponent2(file) {
+    let reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onloadend = function () {
+        vueApp.extraImage2Bool = true;
+        vueApp.extraImage2 = file;
+        vueApp.extraImage2Name = file.name;
+        vueApp.extraImage2Size = bytesToMegaBytes(file.size);
+        $("#imageComponent2").attr("src", reader.result);
+        $(".templateImageComponent2").attr("src", reader.result);
+    };
+}
+
+// `component 3 drop
+let imageComponent3Drop = document.getElementById("inputImageComponent3");
+
+// Prevent default drag behaviors
+["dragenter", "dragover", "dragleave", "drop"].forEach((extraImage3) => {
+    imageComponent3Drop.addEventListener(extraImage3, preventDefaults, false);
+    document.body.addEventListener(extraImage3, preventDefaults, false);
+});
+
+// Handle dropped files
+imageComponent3Drop.addEventListener("drop", handleImageComponent3Drop, false);
+
+function handleImageComponent3Drop(e) {
+    var dt = e.dataTransfer;
+    var files = dt.files;
+    handleImageComponent3Files(files);
+}
+
+function handleImageComponent3Files(files) {
+    files = [...files];
+    files.forEach(previewImageComponent3);
+}
+
+function previewImageComponent3(file) {
+    let reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onloadend = function () {
+        vueApp.extraImage3Bool = true;
+        vueApp.extraImage3 = file;
+        vueApp.extraImage3Name = file.name;
+        vueApp.extraImage3Size = bytesToMegaBytes(file.size);
+        $("#imageComponent3").attr("src", reader.result);
+        $(".templateImageComponent3").attr("src", reader.result);
+    };
+}
+
+// `component 4 drop
+let imageComponent4Drop = document.getElementById("inputImageComponent4");
+
+// Prevent default drag behaviors
+["dragenter", "dragover", "dragleave", "drop"].forEach((extraImage4) => {
+    imageComponent4Drop.addEventListener(extraImage4, preventDefaults, false);
+    document.body.addEventListener(extraImage4, preventDefaults, false);
+});
+
+// Handle dropped files
+imageComponent4Drop.addEventListener("drop", handleImageComponent4Drop, false);
+
+function handleImageComponent4Drop(e) {
+    var dt = e.dataTransfer;
+    var files = dt.files;
+    handleImageComponent4Files(files);
+}
+
+function handleImageComponent4Files(files) {
+    files = [...files];
+    files.forEach(previewImageComponent4);
+}
+
+function previewImageComponent4(file) {
+    let reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onloadend = function () {
+        vueApp.extraImage4Bool = true;
+        vueApp.extraImage4 = file;
+        vueApp.extraImage4Name = file.name;
+        vueApp.extraImage4Size = bytesToMegaBytes(file.size);
+        $("#imageComponent4").attr("src", reader.result);
+        $(".templateImageComponent4").attr("src", reader.result);
+    };
+}
+
+// `component 5 drop
+let imageComponent5Drop = document.getElementById("inputImageComponent5");
+
+// Prevent default drag behaviors
+["dragenter", "dragover", "dragleave", "drop"].forEach((extraImage5) => {
+    imageComponent5Drop.addEventListener(extraImage5, preventDefaults, false);
+    document.body.addEventListener(extraImage5, preventDefaults, false);
+});
+
+// Handle dropped files
+imageComponent5Drop.addEventListener("drop", handleImageComponent5Drop, false);
+
+function handleImageComponent5Drop(e) {
+    var dt = e.dataTransfer;
+    var files = dt.files;
+    handleImageComponent5Files(files);
+}
+
+function handleImageComponent5Files(files) {
+    files = [...files];
+    files.forEach(previewImageComponent5);
+}
+
+function previewImageComponent5(file) {
+    let reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onloadend = function () {
+        vueApp.extraImage5Bool = true;
+        vueApp.extraImage5 = file;
+        vueApp.extraImage5Name = file.name;
+        vueApp.extraImage5Size = bytesToMegaBytes(file.size);
+        $("#imageComponent5").attr("src", reader.result);
+        $(".templateImageComponent5").attr("src", reader.result);
     };
 }

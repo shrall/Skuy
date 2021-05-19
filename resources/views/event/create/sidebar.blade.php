@@ -246,80 +246,193 @@
                     class="rounded-lg bg-gray-300 hover:bg-gray-400 cursor-pointer text-2xl"> <span
                         class="fa fa-fw fa-minus text-secondary-300"></span> </div>
             </div>
-            <div
+            <div v-show="extraComponentCount >= 1"
                 class="flex flex-col mb-2 rounded-md bg-light-100 hover:bg-gray-100 cursor-pointer text-2xl font-skuy-primary text-dark-300 p-1 ml-2">
-                <div class="mb-2">
-                    <div v-show="extraComponentCount >= 1" class="flex flex-row items-center justify-between"
-                        @click="extraComponent1Clicked = !extraComponent1Clicked">
-                        <div class="skuyHeader text-2xl mr-2">Component 1</div>
-                        <span class="fa fa-fw text-secondary-300"
-                            v-bind:class="{ 'fa-chevron-down': !extraComponent1Clicked,'fa-chevron-up': extraComponent1Clicked }"></span>
+                <div class="flex flex-row items-center justify-between"
+                    @click="extraComponent1Clicked = !extraComponent1Clicked">
+                    <div class="skuyHeader text-2xl mr-2">Component 1</div>
+                    <span class="fa fa-fw text-secondary-300"
+                        v-bind:class="{ 'fa-chevron-down': !extraComponent1Clicked,'fa-chevron-up': extraComponent1Clicked }"></span>
+                </div>
+                <div v-show="extraComponent1Clicked && extraComponentCount >= 1" class="mx-1">
+                    <div class="skuyHeader text-xl mb-2">Head</div>
+                    <input name="extra_1_image_head" v-model="extraImage1Head" type="text" class="inputArea mb-4"
+                        placeholder="Max 10 Characters." maxlength="10">
+                    <div class="skuyHeader text-xl mb-2">Body</div>
+                    <input name="extra_1_image_body" v-model="extraImage1Body" type="text" class="inputArea mb-4"
+                        placeholder="Max 30 Characters." maxlength="30">
+                    <div class="skuyHeader text-xl">Image</div>
+                    <div v-show="!extraImage1Bool" id="inputImageComponent1"
+                        class="border-dashed border-2 border-gray-400 rounded-3xl w-full bg-light-200 my-4 py-12">
+                        <div class="flex flex-col content-center text-center ">
+                            <input name="component1" type="file" id="component1Elem" accept="image/*"
+                                onchange="handleImageComponent1Files(this.files)" class="hidden">
+                            <label for="component1Elem"
+                                class="fa fa-image text-dark-300 text-3xl cursor-pointer hover:text-dark-200"></label>
+                            <span class="text-dark-300">Drag and drop or browse</span>
+                        </div>
                     </div>
-                    <div v-show="extraComponent1Clicked && extraComponentCount >= 1" class="mx-1">
-                        <div class="skuyHeader text-xl mb-2">Head</div>
-                        <input name="extra_1_image_head" v-model="extraImage1Head" type="text" class="inputArea mb-4"
-                            placeholder="Max 10 Characters." maxlength="10">
-                        <div class="skuyHeader text-xl mb-2">Body</div>
-                        <input name="extra_1_image_body" v-model="extraImage1Body" type="text" class="inputArea mb-4"
-                            placeholder="Max 30 Characters." maxlength="30">
-                        <div class="skuyHeader text-xl">Image</div>
-                        <div v-show="!extraImage1Bool" id="inputImageComponent1"
-                            class="border-dashed border-2 border-gray-400 rounded-3xl w-full bg-light-200 my-4 py-12">
-                            <div class="flex flex-col content-center text-center ">
-                                <input name="component1" type="file" id="component1Elem" accept="image/*"
-                                    onchange="handleImageComponent1Files(this.files)" class="hidden">
-                                <label for="component1Elem"
-                                    class="fa fa-image text-dark-300 text-3xl cursor-pointer hover:text-dark-200"></label>
-                                <span class="text-dark-300">Drag and drop or browse</span>
-                            </div>
+                    <div v-show="extraImage1Bool"
+                        class="bg-light-100 rounded-xl w-full grid grid-cols-10 px-6 py-4 text-dark-200 font-skuy-primary-sub font-bold justify-between mb-8 space-x-2 items-center">
+                        <img id="imageComponent1" src="" class="w-20 col-span-3">
+                        <div class="flex flex-col py-4 w-full col-span-5">
+                            <span v-html="extraImage1Name" class="text-lg break-words"></span>
+                            <div v-html="extraImage1Size" class="text-sm text-secondary-200"></div>
                         </div>
-                        <div v-show="extraImage1Bool"
-                            class="bg-light-100 rounded-xl w-full grid grid-cols-10 px-6 py-4 text-dark-200 font-skuy-primary-sub font-bold justify-between mb-8 space-x-2 items-center">
-                            <img id="imageComponent1" src="" class="w-20 col-span-3">
-                            <div class="flex flex-col py-4 w-full col-span-5">
-                                <span v-html="extraImage1Name" class="text-lg break-words"></span>
-                                <div v-html="extraImage1Size" class="text-sm text-secondary-200"></div>
-                            </div>
-                            <span @click="deleteImage1"
-                                class="fa fa-times cursor-pointer hover:text-red-600 text-4xl px-2 py-6 col-span-2"></span>
-                        </div>
+                        <span @click="deleteImage1"
+                            class="fa fa-times cursor-pointer hover:text-red-600 text-4xl px-2 py-6 col-span-2"></span>
                     </div>
                 </div>
-                <div class="mb-2">
-                    <div v-show="extraComponentCount >= 1" class="flex flex-row items-center justify-between"
-                        @click="extraComponent1Clicked = !extraComponent1Clicked">
-                        <div class="skuyHeader text-2xl mr-2">Component 1</div>
-                        <span class="fa fa-fw text-secondary-300"
-                            v-bind:class="{ 'fa-chevron-down': !extraComponent1Clicked,'fa-chevron-up': extraComponent1Clicked }"></span>
+            </div>
+            <div v-show="extraComponentCount >= 2"
+                class="flex flex-col mb-2 rounded-md bg-light-100 hover:bg-gray-100 cursor-pointer text-2xl font-skuy-primary text-dark-300 p-1 ml-2">
+                <div class="flex flex-row items-center justify-between"
+                    @click="extraComponent2Clicked = !extraComponent2Clicked">
+                    <div class="skuyHeader text-2xl mr-2">Component 2</div>
+                    <span class="fa fa-fw text-secondary-300"
+                        v-bind:class="{ 'fa-chevron-down': !extraComponent2Clicked,'fa-chevron-up': extraComponent2Clicked }"></span>
+                </div>
+                <div v-show="extraComponent2Clicked && extraComponentCount >= 2" class="mx-1">
+                    <div class="skuyHeader text-xl mb-2">Head</div>
+                    <input name="extra_2_image_head" v-model="extraImage2Head" type="text" class="inputArea mb-4"
+                        placeholder="Max 10 Characters." maxlength="10">
+                    <div class="skuyHeader text-xl mb-2">Body</div>
+                    <input name="extra_2_image_body" v-model="extraImage2Body" type="text" class="inputArea mb-4"
+                        placeholder="Max 30 Characters." maxlength="30">
+                    <div class="skuyHeader text-xl">Image</div>
+                    <div v-show="!extraImage2Bool" id="inputImageComponent2"
+                        class="border-dashed border-2 border-gray-400 rounded-3xl w-full bg-light-200 my-4 py-12">
+                        <div class="flex flex-col content-center text-center ">
+                            <input name="component2" type="file" id="component2Elem" accept="image/*"
+                                onchange="handleImageComponent2Files(this.files)" class="hidden">
+                            <label for="component2Elem"
+                                class="fa fa-image text-dark-300 text-3xl cursor-pointer hover:text-dark-200"></label>
+                            <span class="text-dark-300">Drag and drop or browse</span>
+                        </div>
                     </div>
-                    <div v-show="extraComponent1Clicked && extraComponentCount >= 1" class="mx-1">
-                        <div class="skuyHeader text-xl mb-2">Head</div>
-                        <input name="extra_1_image_head" v-model="extraImage1Head" type="text" class="inputArea mb-4"
-                            placeholder="Max 10 Characters." maxlength="10">
-                        <div class="skuyHeader text-xl mb-2">Body</div>
-                        <input name="extra_1_image_body" v-model="extraImage1Body" type="text" class="inputArea mb-4"
-                            placeholder="Max 30 Characters." maxlength="30">
-                        <div class="skuyHeader text-xl">Image</div>
-                        <div v-show="!extraImage1Bool" id="inputImageComponent1"
-                            class="border-dashed border-2 border-gray-400 rounded-3xl w-full bg-light-200 my-4 py-12">
-                            <div class="flex flex-col content-center text-center ">
-                                <input name="component1" type="file" id="component1Elem" accept="image/*"
-                                    onchange="handleImageComponent1Files(this.files)" class="hidden">
-                                <label for="component1Elem"
-                                    class="fa fa-image text-dark-300 text-3xl cursor-pointer hover:text-dark-200"></label>
-                                <span class="text-dark-300">Drag and drop or browse</span>
-                            </div>
+                    <div v-show="extraImage2Bool"
+                        class="bg-light-100 rounded-xl w-full grid grid-cols-10 px-6 py-4 text-dark-200 font-skuy-primary-sub font-bold justify-between mb-8 space-x-2 items-center">
+                        <img id="imageComponent2" src="" class="w-20 col-span-3">
+                        <div class="flex flex-col py-4 w-full col-span-5">
+                            <span v-html="extraImage2Name" class="text-lg break-words"></span>
+                            <div v-html="extraImage2Size" class="text-sm text-secondary-200"></div>
                         </div>
-                        <div v-show="extraImage1Bool"
-                            class="bg-light-100 rounded-xl w-full grid grid-cols-10 px-6 py-4 text-dark-200 font-skuy-primary-sub font-bold justify-between mb-8 space-x-2 items-center">
-                            <img id="imageComponent1" src="" class="w-20 col-span-3">
-                            <div class="flex flex-col py-4 w-full col-span-5">
-                                <span v-html="extraImage1Name" class="text-lg break-words"></span>
-                                <div v-html="extraImage1Size" class="text-sm text-secondary-200"></div>
-                            </div>
-                            <span @click="deleteImage1"
-                                class="fa fa-times cursor-pointer hover:text-red-600 text-4xl px-2 py-6 col-span-2"></span>
+                        <span @click="deleteImage2"
+                            class="fa fa-times cursor-pointer hover:text-red-600 text-4xl px-2 py-6 col-span-2"></span>
+                    </div>
+                </div>
+            </div>
+            <div v-show="extraComponentCount >= 3"
+                class="flex flex-col mb-2 rounded-md bg-light-100 hover:bg-gray-100 cursor-pointer text-2xl font-skuy-primary text-dark-300 p-1 ml-2">
+                <div class="flex flex-row items-center justify-between"
+                    @click="extraComponent3Clicked = !extraComponent3Clicked">
+                    <div class="skuyHeader text-2xl mr-2">Component 3</div>
+                    <span class="fa fa-fw text-secondary-300"
+                        v-bind:class="{ 'fa-chevron-down': !extraComponent3Clicked,'fa-chevron-up': extraComponent3Clicked }"></span>
+                </div>
+                <div v-show="extraComponent3Clicked && extraComponentCount >= 3" class="mx-1">
+                    <div class="skuyHeader text-xl mb-2">Head</div>
+                    <input name="extra_3_image_head" v-model="extraImage3Head" type="text" class="inputArea mb-4"
+                        placeholder="Max 10 Characters." maxlength="10">
+                    <div class="skuyHeader text-xl mb-2">Body</div>
+                    <input name="extra_3_image_body" v-model="extraImage3Body" type="text" class="inputArea mb-4"
+                        placeholder="Max 30 Characters." maxlength="30">
+                    <div class="skuyHeader text-xl">Image</div>
+                    <div v-show="!extraImage3Bool" id="inputImageComponent3"
+                        class="border-dashed border-2 border-gray-400 rounded-3xl w-full bg-light-200 my-4 py-12">
+                        <div class="flex flex-col content-center text-center ">
+                            <input name="component3" type="file" id="component3Elem" accept="image/*"
+                                onchange="handleImageComponent3Files(this.files)" class="hidden">
+                            <label for="component3Elem"
+                                class="fa fa-image text-dark-300 text-3xl cursor-pointer hover:text-dark-200"></label>
+                            <span class="text-dark-300">Drag and drop or browse</span>
                         </div>
+                    </div>
+                    <div v-show="extraImage3Bool"
+                        class="bg-light-100 rounded-xl w-full grid grid-cols-10 px-6 py-4 text-dark-200 font-skuy-primary-sub font-bold justify-between mb-8 space-x-2 items-center">
+                        <img id="imageComponent3" src="" class="w-20 col-span-3">
+                        <div class="flex flex-col py-4 w-full col-span-5">
+                            <span v-html="extraImage3Name" class="text-lg break-words"></span>
+                            <div v-html="extraImage3Size" class="text-sm text-secondary-200"></div>
+                        </div>
+                        <span @click="deleteImage3"
+                            class="fa fa-times cursor-pointer hover:text-red-600 text-4xl px-2 py-6 col-span-2"></span>
+                    </div>
+                </div>
+            </div>
+            <div v-show="extraComponentCount >= 4"
+                class="flex flex-col mb-2 rounded-md bg-light-100 hover:bg-gray-100 cursor-pointer text-2xl font-skuy-primary text-dark-300 p-1 ml-2">
+                <div class="flex flex-row items-center justify-between"
+                    @click="extraComponent4Clicked = !extraComponent4Clicked">
+                    <div class="skuyHeader text-2xl mr-2">Component 4</div>
+                    <span class="fa fa-fw text-secondary-300"
+                        v-bind:class="{ 'fa-chevron-down': !extraComponent4Clicked,'fa-chevron-up': extraComponent4Clicked }"></span>
+                </div>
+                <div v-show="extraComponent4Clicked && extraComponentCount >= 4" class="mx-1">
+                    <div class="skuyHeader text-xl mb-2">Head</div>
+                    <input name="extra_4_image_head" v-model="extraImage4Head" type="text" class="inputArea mb-4"
+                        placeholder="Max 10 Characters." maxlength="10">
+                    <div class="skuyHeader text-xl mb-2">Body</div>
+                    <input name="extra_4_image_body" v-model="extraImage4Body" type="text" class="inputArea mb-4"
+                        placeholder="Max 30 Characters." maxlength="30">
+                    <div class="skuyHeader text-xl">Image</div>
+                    <div v-show="!extraImage4Bool" id="inputImageComponent4"
+                        class="border-dashed border-2 border-gray-400 rounded-3xl w-full bg-light-200 my-4 py-12">
+                        <div class="flex flex-col content-center text-center ">
+                            <input name="component4" type="file" id="component4Elem" accept="image/*"
+                                onchange="handleImageComponent4Files(this.files)" class="hidden">
+                            <label for="component4Elem"
+                                class="fa fa-image text-dark-300 text-3xl cursor-pointer hover:text-dark-200"></label>
+                            <span class="text-dark-300">Drag and drop or browse</span>
+                        </div>
+                    </div>
+                    <div v-show="extraImage4Bool"
+                        class="bg-light-100 rounded-xl w-full grid grid-cols-10 px-6 py-4 text-dark-200 font-skuy-primary-sub font-bold justify-between mb-8 space-x-2 items-center">
+                        <img id="imageComponent4" src="" class="w-20 col-span-3">
+                        <div class="flex flex-col py-4 w-full col-span-5">
+                            <span v-html="extraImage4Name" class="text-lg break-words"></span>
+                            <div v-html="extraImage4Size" class="text-sm text-secondary-200"></div>
+                        </div>
+                        <span @click="deleteImage4"
+                            class="fa fa-times cursor-pointer hover:text-red-600 text-4xl px-2 py-6 col-span-2"></span>
+                    </div>
+                </div>
+            </div>
+            <div v-show="extraComponentCount >= 5"
+                class="flex flex-col mb-2 rounded-md bg-light-100 hover:bg-gray-100 cursor-pointer text-2xl font-skuy-primary text-dark-300 p-1 ml-2">
+                <div class="flex flex-row items-center justify-between"
+                    @click="extraComponent5Clicked = !extraComponent5Clicked">
+                    <div class="skuyHeader text-2xl mr-2">Component 5</div>
+                    <span class="fa fa-fw text-secondary-300"
+                        v-bind:class="{ 'fa-chevron-down': !extraComponent5Clicked,'fa-chevron-up': extraComponent5Clicked }"></span>
+                </div>
+                <div v-show="extraComponent5Clicked && extraComponentCount >= 5" class="mx-1">
+                    <div class="skuyHeader text-xl mb-2">Head</div>
+                    <input name="extra_5_image_head" v-model="extraImage5Head" type="text" class="inputArea mb-4"
+                        placeholder="Max 10 Characters." maxlength="10">
+                    <div class="skuyHeader text-xl mb-2">Body</div>
+                    <input name="extra_5_image_body" v-model="extraImage5Body" type="text" class="inputArea mb-4"
+                        placeholder="Max 30 Characters." maxlength="30">
+                    <div class="skuyHeader text-xl">Image</div>
+                    <div v-show="!extraImage5Bool" id="inputImageComponent5"
+                        class="border-dashed border-2 border-gray-400 rounded-3xl w-full bg-light-200 my-4 py-12">
+                        <div class="flex flex-col content-center text-center ">
+                            <input name="component5" type="file" id="component5Elem" accept="image/*"
+                                onchange="handleImageComponent5Files(this.files)" class="hidden">
+                            <label for="component5Elem"
+                                class="fa fa-image text-dark-300 text-3xl cursor-pointer hover:text-dark-200"></label>
+                            <span class="text-dark-300">Drag and drop or browse</span>
+                        </div>
+                    </div>
+                    <div v-show="extraImage5Bool"
+                        class="bg-light-100 rounded-xl w-full grid grid-cols-10 px-6 py-4 text-dark-200 font-skuy-primary-sub font-bold justify-between mb-8 space-x-2 items-center">
+                        <img id="imageComponent5" src="" class="w-20 col-span-3">
+                        <div class="flex flex-col py-4 w-full col-span-5">
+                            <span v-html="extraImage5Name" class="text-lg break-words"></span>
+                            <div v-html="extraImage5Size" class="text-sm text-secondary-200"></div>
+                        </div>
+                        <span @click="deleteImage5"
+                            class="fa fa-times cursor-pointer hover:text-red-600 text-4xl px-2 py-6 col-span-2"></span>
                     </div>
                 </div>
             </div>
