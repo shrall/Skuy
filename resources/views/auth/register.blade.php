@@ -15,18 +15,18 @@
                         <label for="">Nama Lengkap</label>
                         <span class="text-primary-500">*</span><br>
                         <input id="name" type="text" type="text" name="name" :value="old('name')" required autofocus
-                            class="inputText w-full">
+                            class="border-0 focus:ring-0 inputText w-full">
                     </div>
                     <div class="mt-2">
                         <label for="">Email</label>
                         <span class="text-primary-500">*</span><br>
-                        <input id="email" type="email" name="email" :value="old('email')" required class="inputText w-full">
+                        <input id="email" type="email" name="email" :value="old('email')" required class="border-0 focus:ring-0 inputText w-full">
                     </div>
                     <div class="mt-2">
                         <label for="">Kata Sandi</label>
                         <span class="text-primary-500">*</span><br>
                         <div class="flex justify-between items-center">
-                            <input type="password" name="password" id="password" class="inputText passwordInput w-full"
+                            <input type="password" name="password" id="password" class="border-0 focus:ring-0 inputText passwordInput w-full"
                                 required autocomplete="new-password">
                             {{-- <i class='bx bxs-show cursor-pointer ml-2' id="togglePassword"></i> --}}
                         </div>
@@ -36,7 +36,7 @@
                         <span class="text-primary-500">*</span><br>
                         <div class="flex justify-between items-center">
                             <input type="password" name="password_confirmation" id="password_confirmation"
-                                class="inputText passwordInput w-full" required>
+                                class="border-0 focus:ring-0 inputText passwordInput w-full" required>
                             {{-- <i class='bx bxs-show cursor-pointer ml-2' id="togglePassword"></i> --}}
                         </div>
                     </div>

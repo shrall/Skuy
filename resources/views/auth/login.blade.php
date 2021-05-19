@@ -15,13 +15,13 @@
                         <label for="">Email</label>
                         <span class="text-primary-500">*</span><br>
                         <input id="email" type="email" name="email" :value="old('email')" required autofocus
-                            class="inputText w-full">
+                            class="border-0 focus:ring-0 inputText w-full">
                     </div>
                     <div class="mt-2">
                         <label for="">Kata Sandi</label>
                         <span class="text-primary-500">*</span><br>
                         <div class="flex justify-between items-center">
-                            <input id="password" class="block mt-1 w-full" type="password" name="password" required
+                            <input id="password" class="border-0 focus:ring-0 inputText w-full" type="password" name="password" required
                                 autocomplete="current-password">
                             {{-- <i class='bx bxs-show cursor-pointer ml-2' id="togglePassword"></i> --}}
                         </div>
