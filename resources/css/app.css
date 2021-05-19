@@ -42,7 +42,7 @@
 
 /* auth */
 .inputText {
-    @apply border-b-2 border-gray-500 focus:border-secondary-300 pb-1 focus:text-secondary-300 focus:outline-none;
+    @apply border-b-2 border-gray-500 focus:border-secondary-300 pb-1 focus:text-secondary-300 outline-none focus:outline-none !important;
 }
 
 
