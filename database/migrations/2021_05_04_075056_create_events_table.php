@@ -37,6 +37,51 @@ class CreateEventsTable extends Migration
             $table->string('register_link')->nullable();
             $table->string('register_button_color')->nullable();
             $table->string('register_text_color')->nullable();
+
+
+            $table->enum('extra', ['0', '1'])
+                ->default('0')
+                ->comment('0 = Off, 1 = On');
+            $table->string('extra_heading')->nullable();
+            $table->integer('extra_template')->nullable();
+            $table->string('extra_text')->nullable();
+            $table->string('extra_button_color')->nullable();
+            $table->string('extra_text_color')->nullable();
+
+            $table->enum('extra_1', ['0', '1'])
+                ->default('0')
+                ->comment('0 = Off, 1 = On');
+            $table->string('extra_image_1')->nullable();
+            $table->string('extra_head_1')->nullable();
+            $table->string('extra_body_1')->nullable();
+
+            $table->enum('extra_2', ['0', '1'])
+                ->default('0')
+                ->comment('0 = Off, 1 = On');
+            $table->string('extra_image_2')->nullable();
+            $table->string('extra_head_2')->nullable();
+            $table->string('extra_body_2')->nullable();
+
+            $table->enum('extra_3', ['0', '1'])
+                ->default('0')
+                ->comment('0 = Off, 1 = On');
+            $table->string('extra_image_3')->nullable();
+            $table->string('extra_head_3')->nullable();
+            $table->string('extra_body_3')->nullable();
+
+            $table->enum('extra_4', ['0', '1'])
+                ->default('0')
+                ->comment('0 = Off, 1 = On');
+            $table->string('extra_image_4')->nullable();
+            $table->string('extra_head_4')->nullable();
+            $table->string('extra_body_4')->nullable();
+
+            $table->enum('extra_5', ['0', '1'])
+                ->default('0')
+                ->comment('0 = Off, 1 = On');
+            $table->string('extra_image_5')->nullable();
+            $table->string('extra_head_5')->nullable();
+            $table->string('extra_body_5')->nullable();
             $table->timestamps();
         });
     }

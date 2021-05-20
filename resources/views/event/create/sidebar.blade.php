@@ -121,7 +121,7 @@
                 placeholder="WhatsApp (e.g +62 812 3312 9966)">
         </div>
         <div class="flex justify-between items-center mb-2">
-            <h2 class="skuyHeader text-3xl">Registration</h2>
+            <h2 class="skuyHeader text-3xl">Extra Button</h2>
             <div class="w-14 h-8 flex items-center bg-gray-300 rounded-full p-1 duration-300 ease-in-out cursor-pointer"
                 :class="{ 'bg-secondary-300': registerBool}" @click="registerBool = !registerBool">
                 <div class="bg-white w-6 h-6 rounded-full shadow-md transform duration-300 ease-in-out"
@@ -226,6 +226,7 @@
                 <span @click="plusExtraTemplate()"
                     class="fa fa-chevron-circle-right text-2xl cursor-pointer hover:text-dark-300"></span>
             </div>
+            <input type="hidden" name="extra_template" v-model="extraTemplate">
             <div class="skuyHeader text-2xl mb-2">Button Text</div>
             <input name="extra_text" v-model="extraText" type="text" class="inputArea mb-4"
                 placeholder="Max 20 Characters." maxlength="20">
@@ -246,6 +247,7 @@
                     class="rounded-lg bg-gray-300 hover:bg-gray-400 cursor-pointer text-2xl"> <span
                         class="fa fa-fw fa-minus text-secondary-300"></span> </div>
             </div>
+            <input type="hidden" name="extra_component_count" v-model="extraComponentCount">
             <div v-show="extraComponentCount >= 1"
                 class="flex flex-col mb-2 rounded-md bg-light-100 hover:bg-gray-100 cursor-pointer text-2xl font-skuy-primary text-dark-300 p-1 ml-2">
                 <div class="flex flex-row items-center justify-between"
