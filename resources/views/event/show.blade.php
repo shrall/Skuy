@@ -87,7 +87,7 @@
                             </a>
                         @endif
                         @if ($event->whatsapp != null)
-                            <a target="_blank" href="eventWhatsapp">
+                            <a target="_blank" href="{{ $event->whatsapp }}">
                                 <span
                                     class="fab fa-whatsapp hover:text-gray-600 transition ease-in-out duration-500"></span>
                             </a>
