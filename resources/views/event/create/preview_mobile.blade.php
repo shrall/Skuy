@@ -143,3 +143,50 @@
                     <img class="templateLogo rounded-lg">
                 </div>
             </div>
+            <!-- note template 4 -->
+            <div v-show="eventTemplate == 4"
+                 class="text-center rounded-lg bg-gray-50 w-1/4 h-full shadow-2xl py-8 mx-auto flex">
+
+                <div v-show="bannerBool" class="flex flex-col justify-center px-2 h-full overflow-hidden">
+                    <img class="templateBanner w-full">
+                </div>
+
+                <div class="flex flex-col justify-center font-sans text-right px-2 py-24">
+                    <div class="relative w-full h-10">
+                        <div v-show="logoBool" class="rounded-lg absolute top-0 right-0 w-10 p-1">
+                            <img class="templateLogo rounded-lg">
+                        </div>
+                    </div>
+                    <div v-show='eventTitle == ""' v-bind:style="{color: titleColor}"
+                         class="text-2xl font-semibold mb-2 break-words text-right">Judul
+                    </div>
+                    <div class="text-2xl font-semibold mb-2 break-words text-right" v-bind:style="{color: titleColor}">
+                        @{{ eventTitle }}</div>
+                    <span v-show='eventDesc == ""' v-bind:style="{color: descColor}"
+                          class="text-sm mb-2 break-words text-right float-right">Deskripsikan event disini.</span>
+                    <span class="text-sm mb-2 break-words text-right float-right" v-bind:style="{color: descColor}">@{{ eventDesc }}</span>
+                    <span class="text-lg mb-2 flex justify-end clear-both" v-bind:style="{color: dateColor}">
+                    <span class="fa fa-calendar-day text-2xl clear-both"></span> @{{ eventDate }}</span>
+                    <div class="flex items-left space-x-8 text-4xl mb-2 flex justify-end" v-bind:style="{color: contactsColor}">
+                        <a v-if="emailBool" target="_blank" v-bind:href="eventEmail">
+                            <span class="fa fa-envelope hover:text-gray-600 transition ease-in-out duration-500"></span>
+                        </a>
+                        <a v-if="instagramBool" target="_blank" v-bind:href="eventInstagram">
+                            <span class="fab fa-instagram hover:text-gray-600 transition ease-in-out duration-500"></span>
+                        </a>
+                        <a v-if="whatsappBool" target="_blank" v-bind:href="eventWhatsapp">
+                            <span class="fab fa-whatsapp hover:text-gray-600 transition ease-in-out duration-500"></span>
+                        </a>
+                    </div>
+                    <div class="flex justify-end">
+                        <div v-show="registerBool" v-bind:style="{'background-color': registerButtonColor, color:registerTextColor}"
+                             class="text-white text-center py-2 px-2 rounded-lg w-40 font-medium text-xl bg-secondary-100 cursor-pointer break-words">
+                            @{{ registerText }}</div>
+                    </div>
+                    <div v-show="extraBool" v-bind:style="{'background-color': extraButtonColor, color:extraTextColor}"
+                         class="text-white text-center py-2 px-2 rounded-lg w-40 font-medium text-xl bg-secondary-100 cursor-pointer break-words absolute right-0 bottom-0"
+                         @click="extraPreviewBool = !extraPreviewBool">
+                        @{{ extraText }} <span class="fa fa-fw fa-arrow-right ml-2"></span> </div>
+                </div>
+
+            </div>

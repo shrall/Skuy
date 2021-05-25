@@ -155,6 +155,64 @@
         @click="extraPreviewBool = !extraPreviewBool">
         @{{ extraText }} <span class="fa fa-fw fa-arrow-right ml-2"></span> </div>
 </div>
+<!-- note template 4 -->
+<div v-show="eventTemplate == 4 && !extraPreviewBool"
+     class="text-center rounded-lg bg-gray-50 w-7/12 h-vh-90 fixed left-3.5/10 shadow-2xl grid grid-cols-12">
+    <div v-show="bannerBool" class="col-span-5 flex flex-col justify-center px-2 rounded-xl h-3/4 my-auto ml-12">
+        <img class="templateBanner w-full">
+    </div>
+    <div v-show="!bannerBool"
+         class="col-span-5 flex flex-col justify-center px-2 bg-light-50 rounded-xl h-3/4 my-auto ml-12">
+        <div class="text-5xl text-dark-300 font-skuy-primary">Banner</div>
+        <span class="fa fa-image text-dark-300 text-5xl"></span>
+    </div>
+
+    <div class="col-span-7 flex flex-col justify-end font-sans text-right pr-8 pl-14 py-24">
+
+        <div class="relative h-full w-full">
+            <div v-show="logoBool" class="rounded-lg absolute top-0 right-0 w-24 p-1">
+                <img class="templateLogo rounded-lg">
+            </div>
+            <div v-show="!logoBool"
+                 class="text-center rounded-lg bg-white absolute top-0 right-0 w-24 h-24 p-1 shadow-2xl flex flex-col justify-center">
+                <div class="text-2xl text-dark-300 font-skuy-primary">Logo</div>
+                <span class="fa fa-image text-dark-300 text-2xl"></span>
+            </div>
+        </div>
+
+        <div v-show='eventTitle == ""' v-bind:style="{color: titleColor}"
+             class="text-4xl font-semibold mb-2 break-words text-right">Judul
+        </div>
+        <div class="text-4xl font-semibold mb-2 break-words text-right" v-bind:style="{color: titleColor}">
+            @{{ eventTitle }}</div>
+        <span v-show='eventDesc == ""' v-bind:style="{color: descColor}"
+              class="text-md mb-2 break-words text-right float-right">Deskripsikan event disini.</span>
+        <span class="text-md mb-2 break-words text-right float-right" v-bind:style="{color: descColor}">@{{ eventDesc }}</span>
+        <span class="text-md mb-2 flex justify-end clear-both" v-bind:style="{color: dateColor}">
+        <span class="fa fa-calendar-day text-2xl clear-both"></span> @{{ eventDate }}</span>
+        <div class="flex items-left space-x-8 text-4xl mb-2 flex justify-end" v-bind:style="{color: contactsColor}">
+            <a v-if="emailBool" target="_blank" v-bind:href="eventEmail">
+                <span class="fa fa-envelope hover:text-gray-600 transition ease-in-out duration-500"></span>
+            </a>
+            <a v-if="instagramBool" target="_blank" v-bind:href="eventInstagram">
+                <span class="fab fa-instagram hover:text-gray-600 transition ease-in-out duration-500"></span>
+            </a>
+            <a v-if="whatsappBool" target="_blank" v-bind:href="eventWhatsapp">
+                <span class="fab fa-whatsapp hover:text-gray-600 transition ease-in-out duration-500"></span>
+            </a>
+        </div>
+        <div class="flex justify-end">
+            <div v-show="registerBool" v-bind:style="{'background-color': registerButtonColor, color:registerTextColor}"
+                 class="text-white text-center py-2 px-2 rounded-lg w-40 font-medium text-xl bg-secondary-100 cursor-pointer break-words">
+                @{{ registerText }}</div>
+        </div>
+        <div v-show="extraBool" v-bind:style="{'background-color': extraButtonColor, color:extraTextColor}"
+             class="text-white text-center py-2 px-2 rounded-lg w-40 font-medium text-xl bg-secondary-100 cursor-pointer break-words absolute right-0 bottom-0"
+             @click="extraPreviewBool = !extraPreviewBool">
+            @{{ extraText }} <span class="fa fa-fw fa-arrow-right ml-2"></span> </div>
+    </div>
+
+</div>
 <!-- note extra template 1 -->
 <div v-show="extraTemplate == 1 && extraPreviewBool"
     class="text-center rounded-lg bg-gray-50 w-7/12 h-vh-90 fixed left-3.5/10 shadow-2xl grid justify-items-center items-center"

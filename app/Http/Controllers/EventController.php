@@ -36,7 +36,7 @@ class EventController extends Controller
      */
     public function store(Request $request)
     {
-        // dd($request);
+         dd($request);
         if ($request['custom_link'] == null) {
             $request['custom_link'] = str_replace(" ", "-", $request['title']);
         } else {

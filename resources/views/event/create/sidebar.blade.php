@@ -42,6 +42,17 @@
                 </div>
                 <div class="w-28 h-14 bg-primary-100 absolute left-6 top-2 z-0 rounded-md"></div>
             </div>
+            <!-- note template 4 -->
+            <div v-if="eventTemplate == 4" class="w-40 h-28 bg-light-300 mx-auto p-4 relative">
+                <div class="w-6 h-6 bg-dark-100 rounded absolute right-6 top-7 z-10"></div>
+                <div class="flex flex-col space-y-1 absolute top-0 bottom-5 right-6 justify-end">
+                    <div class="w-12 h-1 bg-primary-200"></div>
+                    <div class="w-12 h-1 bg-primary-200"></div>
+                    <div class="w-12 h-1 bg-primary-200"></div>
+                    <div class="w-12 h-1 bg-primary-200"></div>
+                </div>
+                <div class="w-12 h-3/5 bg-primary-100 absolute left-4 top-6 z-0"></div>
+            </div>
         </div>
         <div class="flex flex-row text-dark-200 justify-evenly mb-4">
             <span @click="minusTemplate()"
