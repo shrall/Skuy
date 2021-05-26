@@ -123,7 +123,7 @@ var vueApp = new Vue({
             $(".templateBanner").attr("src", "");
         },
         plusTemplate: function () {
-            if (this.eventTemplate >= 4) {
+            if (this.eventTemplate >= 5) {
                 this.eventTemplate = 1;
             } else {
                 this.eventTemplate++;
@@ -131,7 +131,7 @@ var vueApp = new Vue({
         },
         minusTemplate: function () {
             if (this.eventTemplate <= 1) {
-                this.eventTemplate = 4;
+                this.eventTemplate = 5;
             } else {
                 this.eventTemplate--;
             }
@@ -158,7 +158,7 @@ var vueApp = new Vue({
                 });
         },
         plusExtraTemplate: function () {
-            if (this.extraTemplate >= 2) {
+            if (this.extraTemplate >= 3) {
                 this.extraTemplate = 1;
             } else {
                 this.extraTemplate++;
@@ -166,7 +166,7 @@ var vueApp = new Vue({
         },
         minusExtraTemplate: function () {
             if (this.extraTemplate <= 1) {
-                this.extraTemplate = 2;
+                this.extraTemplate = 3;
             } else {
                 this.extraTemplate--;
             }

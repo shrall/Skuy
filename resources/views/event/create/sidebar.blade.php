@@ -53,6 +53,17 @@
                 </div>
                 <div class="w-12 h-3/5 bg-primary-100 absolute left-4 top-6 z-0"></div>
             </div>
+            <!-- note template 5 -->
+            <div v-if="eventTemplate == 5" class="w-40 h-28 bg-light-300 mx-auto p-4 relative">
+                <div class="w-6 h-6 bg-dark-100 rounded absolute right-4 top-4 z-10"></div>
+                <div class="flex flex-col space-y-1 absolute top-0 bottom-4 left-6 justify-end">
+                    <div class="w-8 h-1 bg-primary-200"></div>
+                    <div class="w-28 h-1 bg-primary-200"></div>
+                    <div class="w-28 h-1 bg-primary-200"></div>
+                    <div class="w-28 h-1 bg-primary-200"></div>
+                </div>
+                <div class="w-40 h-14 bg-primary-100 absolute top-0 left-0 z-0"></div>
+            </div>
         </div>
         <div class="flex flex-row text-dark-200 justify-evenly mb-4">
             <span @click="minusTemplate()"
@@ -222,6 +233,34 @@
                     <div class="bg-gray-300 h-12 rounded-md w-7 px-0.5 relative">
                         <div class="w-6 h-6 bg-dark-100 rounded-full absolute -top-0.5"></div>
                         <div class="absolute top-6">
+                            <div class="w-6 h-2px bg-dark-100 mt-2px"></div>
+                            <div class="w-6 h-2px bg-dark-100 mt-2px"></div>
+                            <div class="w-6 h-2px bg-dark-100 mt-2px"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- note template 3  -->
+                <div v-if="extraTemplate == 3"
+                    class="w-40 h-28 bg-light-300 mx-auto p-2 relative grid grid-cols-3 justify-items-center items-center">
+                    <div class="bg-gray-300 h-12 rounded-md w-8 px-1 relative">
+                        <div class="w-6 h-6 bg-primary-100 rounded-full absolute top-1"></div>
+                        <div class="absolute top-7">
+                            <div class="w-6 h-2px bg-dark-100 mt-2px"></div>
+                            <div class="w-6 h-2px bg-dark-100 mt-2px"></div>
+                            <div class="w-6 h-2px bg-dark-100 mt-2px"></div>
+                        </div>
+                    </div>
+                    <div class="bg-gray-300 h-12 rounded-md w-8 px-1 relative">
+                        <div class="w-6 h-6 bg-primary-100 rounded-full absolute top-1"></div>
+                        <div class="absolute top-7">
+                            <div class="w-6 h-2px bg-dark-100 mt-2px"></div>
+                            <div class="w-6 h-2px bg-dark-100 mt-2px"></div>
+                            <div class="w-6 h-2px bg-dark-100 mt-2px"></div>
+                        </div>
+                    </div>
+                    <div class="bg-gray-300 h-12 rounded-md w-8 px-1 relative">
+                        <div class="w-6 h-6 bg-primary-100 rounded-full absolute top-1"></div>
+                        <div class="absolute top-7">
                             <div class="w-6 h-2px bg-dark-100 mt-2px"></div>
                             <div class="w-6 h-2px bg-dark-100 mt-2px"></div>
                             <div class="w-6 h-2px bg-dark-100 mt-2px"></div>
