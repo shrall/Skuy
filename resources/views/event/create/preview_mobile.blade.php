@@ -192,12 +192,12 @@
             </div>
             <!-- note template 5 -->
             <div v-show="eventTemplate == 5"
-                class="text-center rounded-lg bg-gray-50 w-1/4 h-full shadow-2xl py-8 mx-auto grid grid-rows-6">
+                class="text-center rounded-lg bg-gray-50 w-1/4 h-full shadow-2xl mx-auto grid grid-rows-6">
                 <div v-show="bannerBool"
                     class="row-span-2 flex flex-col justify-center overflow-hidden h-full">
                     <img class="templateBanner object-contain my-auto">
                 </div>
-                <div class="row-span-4 flex flex-col justify-start font-sans text-left w-full px-8 overflow-hidden">
+                <div class="row-span-4 flex flex-col justify-start font-sans text-left w-full px-8 pt-3 overflow-hidden">
                     <div v-show='eventTitle == ""' v-bind:style="{color: titleColor}"
                         class="text-2xl font-semibold text-left mb-2 break-words">Judul
                     </div>

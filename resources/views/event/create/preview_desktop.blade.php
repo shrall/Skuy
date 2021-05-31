@@ -131,6 +131,7 @@
     </div>
     <div v-show="logoBool" class="rounded-lg bg-white absolute w-24 p-1 mt-4 ml-16 shadow-2xl">
         <img class="templateLogo rounded-lg">
+    </div>
 </div>
 <!-- note template 4 -->
 <div v-show="eventTemplate == 4 && !extraPreviewBool"
@@ -156,7 +157,7 @@
         <span class="text-lg mb-2 break-words text-right float-right" v-bind:style="{color: descColor}">@{{ eventDesc }}</span>
         <span class="text-lg mb-2 flex justify-end clear-both" v-bind:style="{color: dateColor}">
         <span class="fa fa-calendar-day text-2xl clear-both"></span> @{{ eventDate }}</span>
-        <div class="flex items-left space-x-8 text-4xl mb-2 flex justify-end" v-bind:style="{color: contactsColor}">
+        <div class="flex items-left space-x-8 text-4xl mb-2 justify-end" v-bind:style="{color: contactsColor}">
             <a v-if="emailBool" target="_blank" v-bind:href="eventEmail">
                 <span class="fa fa-envelope hover:text-gray-600 transition ease-in-out duration-500"></span>
             </a>
@@ -180,7 +181,7 @@
 </div>
 <!-- note template 5 -->
 <div v-show="eventTemplate == 5 && !extraPreviewBool"
-    class="text-center rounded-lg bg-gray-50 w-full h-full shadow-2xl grid grid-rows-6 py-8">
+    class="text-center rounded-lg bg-gray-50 w-full h-full shadow-2xl grid grid-rows-6">
     <div v-show="bannerBool" class="row-span-3 flex flex-col justify-center h-9/10">
         <img class="templateBanner object-contain h-full">
     </div>
@@ -214,8 +215,9 @@
             class="text-white text-center py-2 px-2 rounded-lg w-40 font-medium text-xl bg-secondary-100 cursor-pointer break-words">
             @{{ registerText }}</div>
     </div>
-    <div v-show="logoBool" class="rounded-lg bg-white absolute w-24 p-1 mt-4 ml-16 shadow-2xl">
+    <div v-show="logoBool" class="rounded-lg bg-white absolute w-24 p-1 mt-4 mr-16 shadow-2xl top-12 right-12">
         <img class="templateLogo rounded-lg">
+    </div>
 </div>
 <!-- note extra template 1 -->
 <div v-show="extraTemplate == 1 && extraPreviewBool"
