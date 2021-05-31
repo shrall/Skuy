@@ -41,6 +41,6 @@ class Event extends Model
     }
     public function getRouteKeyName(): string
     {
-        return 'slug';
+        return 'custom_link';
     }
 }
