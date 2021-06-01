@@ -207,7 +207,7 @@
                 @{{ registerText }}</div>
         </div>
         <div v-show="extraBool" v-bind:style="{'background-color': extraButtonColor, color:extraTextColor}"
-             class="text-white text-center py-2 px-2 rounded-lg w-40 font-medium text-xl bg-secondary-100 cursor-pointer break-words absolute right-0 bottom-0"
+             class="text-white text-center py-2 px-2 rounded-lg w-40 font-medium text-xl bg-secondary-100 cursor-pointer break-words absolute right-4 bottom-4"
              @click="extraPreviewBool = !extraPreviewBool">
             @{{ extraText }} <span class="fa fa-fw fa-arrow-right ml-2"></span> </div>
     </div>
@@ -327,6 +327,93 @@
     <div v-show="extraBool" v-bind:style="{'background-color': extraButtonColor, color:extraTextColor}"
         class="text-white text-center py-2 px-2 rounded-lg w-40 font-medium text-xl bg-secondary-100 cursor-pointer break-words absolute left-4 bottom-4"
         @click="extraPreviewBool = !extraPreviewBool"><span class="fa fa-fw fa-arrow-left mr-2"></span>
+        Back </div>
+</div>
+
+<!-- note extra template 2 -->
+<div v-show="extraTemplate == 2 && extraPreviewBool"
+     class="text-center rounded-lg bg-gray-50 w-7/12 h-vh-90 fixed left-3.5/10 shadow-2xl grid justify-items-center items-center"
+     v-bind:class="{ 'grid-cols-1': extraComponentCount == 1, 'grid-cols-2': extraComponentCount == 2, 'grid-cols-3': extraComponentCount == 3, 'grid-cols-4': extraComponentCount == 4, 'grid-cols-5': extraComponentCount == 5}">
+    <div class="text-dark-300 text-center font-medium text-5xl absolute left-0 right-0 top-8 mx-auto break-words">
+        @{{ extraMainHeading }}</div>
+    <div v-show="extraComponentCount >=1" class="font-skuy-primary-sub bg-gray-200 p-4 rounded-2xl relative">
+
+        <div v-show="!extraImage1Bool" class="absolute left-0 right-0 -top-1/4 m-auto w-36 h-36 bg-gray rounded-full flex flex-col justify-center bg-gray-100">
+            <div class="text-2xl text-dark-300 font-skuy-primary">Image 1</div>
+            <span class="fa fa-image text-dark-300 text-2xl"></span>
+        </div>
+        <div v-show="extraImage1Bool" class="absolute left-0 right-0 -top-1/4 bg-white m-auto w-36 h-36 bg-gray rounded-full flex flex-col justify-center">
+            <img class="rounded-full templateImageComponent1 object-contain w-36 h-36">
+        </div>
+        <div class="pb-20"></div>
+        <div class="pb-4 pt-4">
+            <div class="text-xl w-40 h-6 mt-1 font-bold">@{{ extraImage1Head }}</div>
+            <div class="text-lg w-40 h-6 mt-1">@{{ extraImage1Body }}</div>
+        </div>
+    </div>
+    <div v-show="extraComponentCount >=2" class="font-skuy-primary-sub bg-gray-200 p-4 rounded-2xl relative">
+
+        <div v-show="!extraImage2Bool" class="absolute left-0 right-0 -top-1/4 m-auto w-36 h-36 bg-gray rounded-full flex flex-col justify-center bg-gray-100">
+            <div class="text-2xl text-dark-300 font-skuy-primary">Image 2</div>
+            <span class="fa fa-image text-dark-300 text-2xl"></span>
+        </div>
+        <div v-show="extraImage2Bool" class="absolute left-0 right-0 -top-1/4 bg-white m-auto w-36 h-36 bg-gray rounded-full flex flex-col justify-center">
+            <img class="rounded-full templateImageComponent2 object-contain w-36 h-36">
+        </div>
+        <div class="pb-20"></div>
+        <div class="pb-4 pt-4">
+            <div class="text-xl w-40 h-6 mt-1 font-bold">@{{ extraImage2Head }}</div>
+            <div class="text-lg w-40 h-6 mt-1">@{{ extraImage2Body }}</div>
+        </div>
+    </div>
+    <div v-show="extraComponentCount >=3" class="font-skuy-primary-sub bg-gray-200 p-4 rounded-2xl relative">
+
+        <div v-show="!extraImage3Bool" class="absolute left-0 right-0 -top-1/4 m-auto w-36 h-36 bg-gray rounded-full flex flex-col justify-center bg-gray-100">
+            <div class="text-2xl text-dark-300 font-skuy-primary">Image 3</div>
+            <span class="fa fa-image text-dark-300 text-2xl"></span>
+        </div>
+        <div v-show="extraImage3Bool" class="absolute left-0 right-0 -top-1/4 bg-white m-auto w-36 h-36 bg-gray rounded-full flex flex-col justify-center">
+            <img class="rounded-full templateImageComponent3 object-contain w-36 h-36">
+        </div>
+        <div class="pb-20"></div>
+        <div class="pb-4 pt-4">
+            <div class="text-xl w-40 h-6 mt-1 font-bold">@{{ extraImage3Head }}</div>
+            <div class="text-lg w-40 h-6 mt-1">@{{ extraImage3Body }}</div>
+        </div>
+    </div>
+    <div v-show="extraComponentCount >=4" class="font-skuy-primary-sub bg-gray-200 p-4 rounded-2xl relative">
+
+        <div v-show="!extraImage4Bool" class="absolute left-0 right-0 -top-1/4 m-auto w-36 h-36 bg-gray rounded-full flex flex-col justify-center bg-gray-100">
+            <div class="text-2xl text-dark-300 font-skuy-primary">Image 4</div>
+            <span class="fa fa-image text-dark-300 text-2xl"></span>
+        </div>
+        <div v-show="extraImage4Bool" class="absolute left-0 right-0 -top-1/4 bg-white m-auto w-36 h-36 bg-gray rounded-full flex flex-col justify-center">
+            <img class="rounded-full templateImageComponent4 object-contain w-36 h-36">
+        </div>
+        <div class="pb-20"></div>
+        <div class="pb-4 pt-4">
+            <div class="text-xl w-40 h-6 mt-1 font-bold">@{{ extraImage4Head }}</div>
+            <div class="text-lg w-40 h-6 mt-1">@{{ extraImage4Body }}</div>
+        </div>
+    </div>
+    <div v-show="extraComponentCount >=5" class="font-skuy-primary-sub bg-gray-200 p-4 rounded-2xl relative">
+
+        <div v-show="!extraImage5Bool" class="absolute left-0 right-0 -top-1/4 bg-white m-auto w-36 h-36 bg-gray rounded-full flex flex-col justify-center bg-gray-100">
+            <div class="text-2xl text-dark-300 font-skuy-primary">Image 5</div>
+            <span class="fa fa-image text-dark-300 text-2xl"></span>
+        </div>
+        <div v-show="extraImage5Bool" class="absolute left-0 right-0 -top-1/4 bg-white m-auto w-36 h-36 bg-gray rounded-full flex flex-col justify-center">
+            <img class="rounded-full templateImageComponent5 object-contain w-36 h-36">
+        </div>
+        <div class="pb-20"></div>
+        <div class="pb-4 pt-4">
+            <div class="text-xl w-40 h-6 mt-1 font-bold">@{{ extraImage5Head }}</div>
+            <div class="text-lg w-40 h-6 mt-1">@{{ extraImage5Body }}</div>
+        </div>
+    </div>
+    <div v-show="extraBool" v-bind:style="{'background-color': extraButtonColor, color:extraTextColor}"
+         class="text-white text-center py-2 px-2 rounded-lg w-40 font-medium text-xl bg-secondary-100 cursor-pointer break-words absolute left-4 bottom-4"
+         @click="extraPreviewBool = !extraPreviewBool"><span class="fa fa-fw fa-arrow-left mr-2"></span>
         Back </div>
 </div>
 
