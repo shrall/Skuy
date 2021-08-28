@@ -28,18 +28,14 @@
     <div class="w-1/2 mt-12 text-center text-white font-skuy-primary text-3xl mx-auto">Pertanyaan</div>
     <div class="w-11/12 mt-4 h-vh-40 mx-auto rounded-xl bg-white">
         <textarea id="input-question" disabled
-            class="w-full h-full resize-none text-center align-middle mx-auto py-24 rounded-xl bg-white ">{{ $question->question }}</textarea>
+            class="w-full h-full resize-none text-2xl font-skuy-secondary text-center align-middle mx-auto py-24 rounded-xl bg-white ">{{ $question->question }}</textarea>
     </div>
     <div class="w-1/2 mt-12 text-center text-white font-skuy-primary text-3xl mx-auto">Jawaban</div>
     <div class="w-11/12 mt-4 h-1/6 mx-auto rounded-xl bg-white">
-        <form action="{{ route('itc.post_answer') }}" method="post" id="answer-form">
-            @csrf
-            <textarea name="jawaban"
-                class="w-full h-full resize-none text-center align-middle mx-auto py-24 rounded-xl bg-white "></textarea>
-        </form>
+        <textarea name="jawaban" id="input-answer"
+            class="w-full h-full  font-skuy-secondary resize-none text-center align-middle mx-auto py-24 rounded-xl bg-white "></textarea>
     </div>
-    <div onclick="event.preventDefault();
-    document.getElementById('answer-form').submit();"
+    <div onclick="post_answer();"
         class="mt-4 w-64 text-center mx-auto text-white font-skuy-primary hover:bg-secondary-300 bg-secondary-200 border-secondary-100 py-2 cursor-pointer text-xl px-8 rounded-lg">
         Submit Jawaban</div>
     <div class="w-10/12 mx-auto grid grid-cols-4 gap-4 mt-8" id="answer-box">
@@ -47,8 +43,15 @@
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script>
         var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
+        var bgm = new Audio("{{ asset('audio/q.mp3') }}");
+        bgm.loop = true;
+        bgm.volume = 0.1;
+        $(document).ready(function() {
+            bgm.play();
+        });
 
         fetch_question();
+
         function fetch_question() {
             $.post('{{ config('app.url') }}' + "/itc-2021/question", {
                     _token: CSRF_TOKEN,
@@ -63,6 +66,20 @@
             setTimeout(function() {
                 fetch_question();
             }, 1000);
+        }
+
+        function post_answer() {
+            $.post('{{ config('app.url') }}' + "/itc-2021/jawaban", {
+                    _token: CSRF_TOKEN,
+                    jawaban: $('#input-answer').val()
+                })
+                .done(function(data) {
+                    console.log(data);
+                    $('#input-answer').val(null);
+                })
+                .fail(function(error) {
+                    console.log(error);
+                });
         }
     </script>
 </body>

@@ -95,6 +95,12 @@ class QuestionController extends Controller
         $question->update([
             'question' => $request->data
         ]);
+        $answers = Answer::all();
+        if (count($answers) > 0){
+            foreach($answers as $answer){
+                $answer->delete();
+            }
+        }
         return $question;
     }
 }
