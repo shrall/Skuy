@@ -65,7 +65,7 @@
                 });
             setTimeout(function() {
                 fetch_question();
-            }, 1000);
+            }, 3000);
         }
 
         function post_answer() {

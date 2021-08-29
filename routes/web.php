@@ -35,14 +35,14 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
     Route::get('itc-2021/eo/quiz', [QuestionController::class, 'index'])->name('itc.question');
     Route::post('itc-2021/answer', [QuestionController::class, 'fetch_answers'])->name('itc.fetchanswers');
     Route::post('itc-2021/pertanyaan', [QuestionController::class, 'post_question'])->name('itc.post_question');
-    Route::post('itc-2021/question', [AnswerController::class, 'fetch_question'])->name('itc.fetchquestion');
-    Route::post('itc-2021/jawaban', [AnswerController::class, 'store'])->name('itc.post_answer');
 });
 Route::get('event/{event}', [EventController::class, 'show'])->name('event.show');
 Route::delete('event/{event}', [EventController::class, 'destroy'])->name('event.destroy');
 Route::match(['get', 'head'], 'event/{event}/register', [EventController::class, 'register_edit'])->name('event.register_edit');
 Route::match(['put', 'patch'], 'event/{event}/register', [EventController::class, 'register_update'])->name('event.register_update');
 Route::get('itc-2021/quiz', [AnswerController::class, 'index'])->name('itc.answer');
+Route::post('itc-2021/question', [AnswerController::class, 'fetch_question'])->name('itc.fetchquestion');
+Route::post('itc-2021/jawaban', [AnswerController::class, 'store'])->name('itc.post_answer');
 
 
 require __DIR__ . '/auth.php';

@@ -69,7 +69,7 @@
                 });
             setTimeout(function() {
                 fetch_answers();
-            }, 1000);
+            }, 3000);
         }
     </script>
 </body>
