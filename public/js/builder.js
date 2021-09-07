@@ -77,6 +77,14 @@ var vueApp = new Vue({
         extraComponent3Clicked: false,
         extraComponent4Clicked: false,
         extraComponent5Clicked: false,
+        highlightBool: false,
+        highlightIcon: "",
+        highlightIconBool: false,
+        highlightIconName: "",
+        highlightIconSize: "",
+        highlightColor: "#000000FF",
+        highlightHead: "",
+        highlightBody: "",
     },
     methods: {
         changeEmail: function () {
@@ -210,6 +218,14 @@ var vueApp = new Vue({
             this.extraImage5Size = "";
             $("#imageComponent5").attr("src", "");
             $(".templateImageComponent5").attr("src", "");
+        },
+        deleteHighlightIcon: function () {
+            this.highlightIconBool = false;
+            this.highlightIcon = "";
+            this.highlightIconName = "";
+            this.highlightIconSize = "";
+            $("#highlightIcon").attr("src", "");
+            $(".templateHighlightIcon").attr("src", "");
         },
     },
     computed: {},
@@ -498,5 +514,41 @@ function previewImageComponent5(file) {
         vueApp.extraImage5Size = bytesToMegaBytes(file.size);
         $("#imageComponent5").attr("src", reader.result);
         $(".templateImageComponent5").attr("src", reader.result);
+    };
+}
+
+// `highlight icon drop
+let highlightIconDrop = document.getElementById("inputHighlightIcon");
+
+// Prevent default drag behaviors
+["dragenter", "dragover", "dragleave", "drop"].forEach((highlightIcon) => {
+    highlightIconDrop.addEventListener(highlightIcon, preventDefaults, false);
+    document.body.addEventListener(highlightIcon, preventDefaults, false);
+});
+
+// Handle dropped files
+highlightIconDrop.addEventListener("drop", handleHighlightIconDrop, false);
+
+function handleHighlightIconDrop(e) {
+    var dt = e.dataTransfer;
+    var files = dt.files;
+    handleHighlightIconFiles(files);
+}
+
+function handleHighlightIconFiles(files) {
+    files = [...files];
+    files.forEach(previewHighlightIcon);
+}
+
+function previewHighlightIcon(file) {
+    let reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onloadend = function () {
+        vueApp.highlightIconBool = true;
+        vueApp.highlightIcon = file;
+        vueApp.highlightIconName = file.name;
+        vueApp.highlightIconSize = bytesToMegaBytes(file.size);
+        $("#highlightIcon").attr("src", reader.result);
+        $(".templateHighlightIcon").attr("src", reader.result);
     };
 }

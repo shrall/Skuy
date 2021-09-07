@@ -82,6 +82,10 @@ class CreateEventsTable extends Migration
             $table->string('extra_image_5')->nullable();
             $table->string('extra_head_5')->nullable();
             $table->string('extra_body_5')->nullable();
+            $table->string('highlight_icon')->nullable();
+            $table->string('highlight_color')->nullable();
+            $table->string('highlight_head')->nullable();
+            $table->string('highlight_body')->nullable();
             $table->timestamps();
         });
     }

@@ -36,7 +36,6 @@ class EventController extends Controller
      */
     public function store(Request $request)
     {
-        //  dd($request);
         if ($request['custom_link'] == null) {
             $request['custom_link'] = str_replace(" ", "-", $request['title']);
         } else {
@@ -93,6 +92,12 @@ class EventController extends Controller
             $request->component5->move(public_path('events/component'), $component_image_5);
         } else {
             $component_image_5 = null;
+        }
+        if ($request->has('highlight_icon')) {
+            $highlight_icon = $request['custom_link'] . time() . '-' . $request['highlight_icon']->getClientOriginalName();
+            $request->highlight_icon->move(public_path('events/highlight'), $highlight_icon);
+        } else {
+            $highlight_icon = null;
         }
         if ($request['email'] != null) {
             $request['email'] = "mailto:" . $request['email'];
@@ -198,6 +203,10 @@ class EventController extends Controller
             'extra_image_5' => $component_image_5,
             'extra_head_5' => $request['extra_5_image_head'],
             'extra_body_5' => $request['extra_5_image_body'],
+            'highlight_icon' => $highlight_icon,
+            'highlight_color' => "#FFFFFFFF",
+            'highlight_head' => $request['highlight_head'],
+            'highlight_body' => $request['highlight_body'],
             'user_id' => Auth::id(),
         ]);
 

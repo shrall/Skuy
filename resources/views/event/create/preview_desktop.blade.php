@@ -90,6 +90,16 @@
     <div v-show="logoBool" class="rounded-lg bg-white absolute top-12 right-36 w-24 p-1 shadow-2xl z-30">
         <img class="templateLogo rounded-lg">
     </div>
+    <div v-show="highlightBool"
+        class="absolute top-0 bottom-0 right-0 w-5/12 flex flex-col justify-center content-center font-sans text-center z-40">
+        <div class="rounded-full bg-white w-40 p-1 shadow-2xl mx-auto mb-4" v-show="highlightIconBool">
+            <img class="templateHighlightIcon rounded-full">
+        </div>
+        <span class="text-3xl text-center mb-3 break-words"
+        v-bind:style="{color: highlightColor}">@{{ highlightHead }}</span>
+        <span class="text-2xl text-center mb-4 break-words"
+        v-bind:style="{color: highlightColor}">@{{ highlightBody }}</span>
+    </div>
 </div>
 <!-- note template 3 -->
 <div v-show="eventTemplate == 3 && !extraPreviewBool"

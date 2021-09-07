@@ -59,11 +59,11 @@
         </div>
         <div class="text-5xl font-semibold text-left mb-2 break-words" v-bind:style="{color: titleColor}">
             @{{ eventTitle }}</div>
-        <span v-show='eventDesc == ""' class="text-lg text-left mb-2 break-words"
+        <span v-show='eventDesc == ""' class="text-2xl text-left mb-2 break-words"
             v-bind:style="{color: descColor}">Deskripsikan eventmu
             disini.</span>
-        <span class="text-lg text-left mb-2 break-words" v-bind:style="{color: descColor}">@{{ eventDesc }}</span>
-        <span class="text-lg text-left mb-2" v-bind:style="{color: dateColor}">
+        <span class="text-2xl text-left mb-2 break-words" v-bind:style="{color: descColor}">@{{ eventDesc }}</span>
+        <span class="text-2xl text-left mb-2" v-bind:style="{color: dateColor}">
             <span class="fa fa-calendar-day text-2xl"></span> @{{ eventDate }}</span>
         <div class="flex items-left space-x-8 text-5xl mb-2" v-bind:style="{color: contactsColor}">
             <a v-if="emailBool" target="_blank" v-bind:href="eventEmail">
@@ -90,6 +90,16 @@
     <div v-show="!bannerBool" class="col-span-12 flex flex-col justify-center px-2 bg-light-50 rounded-xl h-full">
         <div class="text-5xl text-dark-300 font-skuy-primary">Banner</div>
         <span class="fa fa-image text-dark-300 text-5xl"></span>
+    </div>
+    <div v-show="highlightBool"
+        class="absolute top-0 bottom-0 right-0 w-5/12 flex flex-col justify-center content-center font-sans text-center z-40">
+        <div class="rounded-full bg-white w-40 p-1 shadow-2xl mx-auto mb-4" v-show="highlightIconBool">
+            <img class="templateHighlightIcon rounded-full">
+        </div>
+        <span class="text-3xl text-center mb-3 break-words"
+        v-bind:style="{color: highlightColor}">@{{ highlightHead }}</span>
+        <span class="text-2xl text-center mb-4 break-words"
+        v-bind:style="{color: highlightColor}">@{{ highlightBody }}</span>
     </div>
     <div v-show="logoBool" class="rounded-lg bg-white absolute top-12 right-12 w-24 p-1 shadow-2xl mr-12">
         <img class="templateLogo rounded-lg">

@@ -142,6 +142,47 @@
             <input name="whatsapp" id="inputWhatsapp" @keyup="changeWhatsapp" type="text" class="inputArea"
                 placeholder="WhatsApp (e.g +62 812 3312 9966)">
         </div>
+        <div class="flex justify-between items-center mb-2" v-show="eventTemplate == 2">
+            <h2 class="skuyHeader text-3xl">Highlight</h2>
+            <div class="w-14 h-8 flex items-center bg-gray-300 rounded-full p-1 duration-300 ease-in-out cursor-pointer"
+                :class="{ 'bg-secondary-300': highlightBool}" @click="highlightBool = !highlightBool">
+                <div class="bg-white w-6 h-6 rounded-full shadow-md transform duration-300 ease-in-out"
+                    :class="{ 'translate-x-6': highlightBool,}"></div>
+            </div>
+        </div>
+        <input type="hidden" name="highlight" v-model="highlightBool">
+        <div v-show="eventTemplate == 2 && highlightBool"
+            class="flex flex-col mb-2 rounded-md cursor-pointer text-2xl font-skuy-primary text-dark-300 p-1 ml-2">
+            <div class="skuyHeader text-xl mb-2">Head</div>
+            <input name="highlight_head" v-model="highlightHead" type="text" class="inputArea mb-4"
+                placeholder="Max 50 Characters." maxlength="50">
+            <div class="skuyHeader text-xl mb-2">Body</div>
+            <input name="highlight_body" v-model="highlightBody" type="text" class="inputArea mb-4"
+                placeholder="Max 50 Characters." maxlength="50">
+            <div class="skuyHeader text-2xl mb-2">Highlight Color</div>
+            <input name="highlight_color" v-model="highlightColor" data-jscolor="{}" class="inputArea mb-2">
+            <div class="skuyHeader text-xl">Image</div>
+            <div v-show="!highlightIconBool" id="inputImageHighlight"
+                class="border-dashed border-2 border-gray-400 rounded-3xl w-full bg-light-200 my-4 py-12">
+                <div class="flex flex-col content-center text-center ">
+                    <input name="highlight_icon" type="file" id="HighlightElem" accept="image/*"
+                        onchange="handleHighlightIconFiles(this.files)" class="hidden">
+                    <label for="HighlightElem"
+                        class="fa fa-image text-dark-300 text-3xl cursor-pointer hover:text-dark-200"></label>
+                    <span class="text-dark-300">Drag and drop or browse</span>
+                </div>
+            </div>
+            <div v-show="highlightIconBool"
+                class="bg-light-100 rounded-xl w-full grid grid-cols-10 px-6 py-4 text-dark-200 font-skuy-primary-sub font-bold justify-between mb-8 space-x-2 items-center">
+                <img id="highlightIcon" src="" class="w-20 col-span-3">
+                <div class="flex flex-col py-4 w-full col-span-5">
+                    <span v-html="highlightIconName" class="text-lg break-words"></span>
+                    <div v-html="highlightIconSize" class="text-sm text-secondary-200"></div>
+                </div>
+                <span @click="deleteHighlightIcon"
+                    class="fa fa-times cursor-pointer hover:text-red-600 text-4xl px-2 py-6 col-span-2"></span>
+            </div>
+        </div>
         <div class="flex justify-between items-center mb-2">
             <h2 class="skuyHeader text-3xl">Extra Button</h2>
             <div class="w-14 h-8 flex items-center bg-gray-300 rounded-full p-1 duration-300 ease-in-out cursor-pointer"
